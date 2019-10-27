@@ -84,16 +84,16 @@ Loops=`redis-cli GET ${TOKEN}`
 echo $Loops
 if [[ $Loops == 5 ]]; then
 curl "https://api.telegram.org/bot${TOKEN}/sendmessage" -F "chat_id=${Sudo}" -F "text=THESOURCE-Reloaded-${COUNTER}-times" &>/dev/null
-screen -X -S vbot quit
+screen -X -S boss quit
 fi
 done
 else 
 if [[ $Loops == 0 ]]; then
-if ! screen -list | grep -q "vbot"; then
-screen -S vbot ./run R
+if ! screen -list | grep -q "boss"; then
+screen -S boss ./run R
 else
-screen -X -S vbot quit
-screen -S vbot ./run R
+screen -X -S boss quit
+screen -S boss ./run R
 fi
 fi
 fi
