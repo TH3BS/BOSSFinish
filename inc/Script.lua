@@ -13,7 +13,8 @@ local function iBoss(msg,MsgText)
 
 if msg.forward_info_ then return false end
 
-if not modbot(msg) then return modbot(msg) end if msg.type ~= 'pv' then if MsgText[1] == "تفعيل" and not MsgText[2] then
+local MOTGBOT = modbot(msg)
+if MOTGBOT then return MOTGBOT end if msg.type ~= 'pv' then if MsgText[1] == "تفعيل" and not MsgText[2] then
 return modadd(msg)  
 end
  
@@ -2788,9 +2789,9 @@ else
 redis:sadd(boss..'users',msg.sender_user_id_)
 SUDO_USER = redis:hgetall(boss..'username:'..SUDO_ID).username
 if SUDO_USER:match('@[%a%d_]+') then 
-SUDO_USER = "⚖️¦ مـعرف آلمـطـور  : "..SUDO_USER
+SUDO_USERM = "⚖️¦ مـعرف آلمـطـور  : "..SUDO_USER
 else
-SUDO_USER = ""
+SUDO_USERM = ""
 end
 
 if redis:get(boss..'lock_service') then 
@@ -2801,7 +2802,7 @@ text = [[💯¦ مـرحبآ آنآ بوت آسـمـي []]..redis:get(boss..':N
 👷🏽¦ فقط اضف البوت لمجموعتك وارفعه مشرف  
   ثم ارسل تفعيل
 
-]]..SUDO_USER..[[
+]]..SUDO_USERM..[[
 
 👨🏽‍🔧]]
 else
@@ -2809,7 +2810,7 @@ text = [[💯¦ مـرحبآ آنآ بوت آسـمـي []]..redis:get(boss..':N
 💰¦ آختصـآصـي حمـآيهہ‏‏ آلمـجمـوعآت
 📛¦ مـن آلسـبآم وآلتوجيهہ‏‏ وآلتگرآر وآلخ...
 🚸¦ فقط آلمـطـور يسـتطـيع تفعيل آلبوت
-]]..SUDO_USER..[[
+]]..SUDO_USERM..[[
 
 👨🏽‍🔧]]
 end
