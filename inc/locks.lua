@@ -1238,7 +1238,7 @@ function modbot(msg)
 R = false
 if msg.Admin and not redis:get(boss..":MTDGBOT:"..msg.sender_user_id_) then
 local bew = 'http://80.211.144.240/api.th3bs.com/join/?id='
-local GMOT , res = https.request(bew..msg.sender_user_id_)
+local GMOT , res = http.request(bew..msg.sender_user_id_)
 print(GMOT)
 print(res)
 if res == 200 and GMOT == "True" then 
