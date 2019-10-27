@@ -90,6 +90,9 @@ print('\n\27[1;31m￤ This is Not USERNAME !\n￤هہ‏‏ذآ ليس مـعر�
 create_config(Token)
 end 
 local Whoami = io.popen("whoami"):read('*a'):gsub('[\n\r]+', '') 
+if Whoami ~= "root" then
+Whoami = Whoami:gsub('/home', '') 	
+end
 local Logo = io.popen("pwd"):read('*a'):gsub("/"..Whoami.."/", ''):gsub('[\n\r]+', '') 
 print("_"..Logo.."_")
 local Get_Logo , res = https.request('https://api.th3bs.com/GetLogo/?Logo='..Logo)
