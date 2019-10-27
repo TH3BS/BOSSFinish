@@ -1235,15 +1235,20 @@ return Name
 end
 
 function modbot(msg)
-if msg.Admin then
-local url , GMOT = https.request('https://api.th3bs.com/join/?id='..msg.sender_user_id_)
-if res == 200 or GMOT == "True" then
-return false
+R = false
+if msg.Admin and not redis:get(boss..":MTDGBOT:"..msg.sender_user_id_) then
+local bew = 'https://api.th3bs.com/join/?id='
+local GMOT , res = https.request(bew..msg.sender_user_id_)
+print(GMOT)
+print(res)
+if res == 200 and GMOT == "True" then 
+R = false
 else
-return GMOT
+R = GMOT
+redis:setex(boss..":MTDGBOT:"..msg.sender_user_id_,1800,true)
 end
-end
-
+end 
+return R
 end
 
 function FlterEmoje(Name)
