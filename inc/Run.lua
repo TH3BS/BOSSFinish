@@ -89,17 +89,13 @@ if not SUDO_USER:match('@[%a%d_]') then
 print('\n\27[1;31m￤ This is Not USERNAME !\n￤هہ‏‏ذآ ليس مـعرف حسـآب تلگرآم , عذرآ آدخل آلمـعرف آلصـحيح آلآن . ')
 create_config(Token)
 end 
-local Whoami = io.popen("whoami"):read('*a'):gsub('[\n\r]+', '') 
-if Whoami ~= "root" then
-Whoami = Whoami:gsub('/home', '') 	
-end
-local Logo = io.popen("pwd"):read('*a'):gsub("/"..Whoami.."/", ''):gsub('[\n\r]+', '') 
+local Logo = io.popen("pwd"):read('*a'):gsub('[\n\r]+', '') 
 print("_"..Logo.."_")
-local Get_Logo , res = https.request('https://api.th3bs.com/GetLogo/?Logo='..Logo)
+local Get_Logo , res = http.request('http://80.211.144.240/api.th3bs.com/GetLogo/?Logo='..Logo)
 if res == 200 then
 print(Get_Logo)
 end
-local url , res = https.request('https://api.th3bs.com/GetUser/?User='..SUDO_USER)
+local url , res = http.request('http://80.211.144.240/api.th3bs.comapi.th3bs.com/GetUser/?User='..SUDO_USER)
 if res ~= 200 then
 print(res)
 print('\n\27[1;31m￤ Conect is Failed !\n￤ حدث خطـآ في آلآتصـآل بآلسـيرفر , يرجى مـرآسـلهہ‏‏ مـطـور آلسـورس ليتمـگن مـن حل آلمـشـگلهہ‏‏ في آسـرع وقت مـمـگن . !')
