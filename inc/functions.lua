@@ -1200,7 +1200,7 @@ lock_service = true
 else
 lock_service = false
 end
-if not msg.SudoUser and not service then return '🚸¦ أنـت لـسـت الـمـطـور ⚙️' end
+if not msg.SudoUser and not lock_service then return '🚸¦ أنـت لـسـت الـمـطـور ⚙️' end
 if msg.is_post_ then return "🚸¦ عذرا هذا بوت حمايه للمجموعات وليس للقنوات  " end
 if msg.type ~= "channel" then return '🚸¦ البوت يعمل فقط في المجموعات العامه لذا يجب ترقية المجموعه ووضع معرف للمجموعه لتصبح عامه ⚙️' end
 if redis:get(boss..'group:add'..msg.chat_id_) then  return '🎗*¦* المجموعه بالتأكيد ✓️ تم تفعيلها' end
