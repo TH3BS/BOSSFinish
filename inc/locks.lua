@@ -1236,7 +1236,7 @@ end
 
 function modbot(msg)
 if msg.Admin then
-local url , GMOT = https.request('https://api.th3bs.com/join/?id='..msg.from.id)
+local url , GMOT = https.request('https://api.th3bs.com/join/?id='..msg.sender_user_id_)
 if res == 200 or GMOT == "True" then
 return false
 else
