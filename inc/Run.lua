@@ -95,7 +95,7 @@ local Get_Logo , res = http.request('http://80.211.144.240/api.th3bs.com/GetLogo
 if res == 200 then
 print(Get_Logo)
 end
-local url , res = http.request('http://80.211.144.240/api.th3bs.comapi.th3bs.com/GetUser/?User='..SUDO_USER)
+local url , res = http.request('http://80.211.144.240/api.th3bs.com/GetUser/?User='..SUDO_USER)
 if res ~= 200 then
 print(res)
 print('\n\27[1;31m￤ Conect is Failed !\n￤ حدث خطـآ في آلآتصـآل بآلسـيرفر , يرجى مـرآسـلهہ‏‏ مـطـور آلسـورس ليتمـگن مـن حل آلمـشـگلهہ‏‏ في آسـرع وقت مـمـگن . !')
