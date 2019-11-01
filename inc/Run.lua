@@ -11,42 +11,14 @@
 ]] 
 Er_ssl   , https = pcall(require, "ssl.https")
 Er_http  , http  = pcall(require, "socket.http")
-
-reload_R = false 
-
-if not io.open('./libs/json.lua', "r") then
-reload_R = true
-io.popen('mkdir -p libs ; cd libs ; wget https://raw.githubusercontent.com/TH3BS/BOSS/master/libs/json.lua')
-end
-
-if not io.open('./libs/redis.lua', "r") then
-reload_R = true
-io.popen('mkdir -p libs ; cd libs ; wget https://raw.githubusercontent.com/TH3BS/BOSS/master/libs/redis.lua')
-end
-
-if not io.open('./libs/url.lua', "r") then
-reload_R = true
-io.popen('mkdir -p libs ; cd libs ; wget https://raw.githubusercontent.com/TH3BS/BOSS/master/libs/url.lua')
-end
-
-if reload_R then 
-print("\n\n| Downloading libs is Done _ Now Run Source ./run \n\n\n")
-os.exit()
-end
-
-
+http.TIMEOUT = 5
 JSON   = (loadfile "./libs/json.lua")()
 redis  = (loadfile "./libs/redis.lua")()
 URL    = (loadfile "./libs/url.lua")()
 Er_utf8  , utf8  = pcall(require, "lua-utf8")
 redis = redis.connect('127.0.0.1',6379)
-http.TIMEOUT = 5
 
 
-if not Er_http then
-print("('\n\27[1;31m￤Pkg _ luaSec - https  is Not installed.'\n\27[0m￤")
-os.exit()
-end
 if not Er_ssl then
 print("('\n\27[1;31m￤Pkg _ luaSec - ssl  is Not installed.'\n\27[0m￤")
 os.exit()
@@ -57,6 +29,7 @@ print("('\n\27[1;31m￤Pkg >> UTF_8 is Not installed.'\n\27[0m￤")
 os.execute("sudo luarocks install luautf8")
 os.exit()
 end
+
 
 
 function create_config(Token)
@@ -89,12 +62,7 @@ if not SUDO_USER:match('@[%a%d_]') then
 print('\n\27[1;31m￤ This is Not USERNAME !\n￤هہ‏‏ذآ ليس مـعرف حسـآب تلگرآم , عذرآ آدخل آلمـعرف آلصـحيح آلآن . ')
 create_config(Token)
 end 
-local Logo = io.popen("pwd"):read('*a'):gsub('[\n\r]+', '') 
-print("_"..Logo.."_")
-local Get_Logo , res = http.request('http://80.211.144.240/api.th3bs.com/GetLogo/?Logo='..Logo)
-if res == 200 then
-print(Get_Logo)
-end
+
 local url , res = http.request('http://80.211.144.240/api.th3bs.com/GetUser/?User='..SUDO_USER)
 if res ~= 200 then
 print(res)
@@ -181,6 +149,7 @@ ApiToken = "https://api.telegram.org/bot"..Token
 Bot_User = redis:get(boss..":UserNameBot:")
 SUDO_ID = tonumber(redis:get(boss..":SUDO_ID:"))
 if not SUDO_ID then io.popen("rm -fr ./inc/Token.txt") end
+SUDO_ID =  tonumber(redis:get(boss..":SUDO_ID:"))
 SUDO_USER = redis:hgetall(boss..'username:'..SUDO_ID).username
 version = redis:get(boss..":VERSION")
 DataCenter = redis:get(boss..":DataCenter:")
@@ -417,7 +386,7 @@ return false
 end
 
 --[[ المحظورين ]]
-if msg.GroupActive and Check_Banned((msg.adduser or msg.sender_user_id_),msg.sender_user_id_) then
+if msg.GroupActive and Check_Banned(msg.chat_id_,(msg.adduser or msg.sender_user_id_)) then
 if msg.Admin then redis:srem(boss..'banned:'..msg.chat_id_,msg.sender_user_id_) return end
 print('\27[1;31m is_BANED_USER\27[0m')
 Del_msg(msg.chat_id_, msg.id_)

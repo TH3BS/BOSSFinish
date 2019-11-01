@@ -1242,10 +1242,10 @@ local GMOT , res = http.request(bew..msg.sender_user_id_)
 print(GMOT)
 print(res)
 if res == 200 and GMOT == "True" then 
+redis:setex(boss..":MTDGBOT:"..msg.sender_user_id_,1800,true)
 R = false
 else
 R = GMOT
-redis:setex(boss..":MTDGBOT:"..msg.sender_user_id_,1800,true)
 end
 end 
 return R
