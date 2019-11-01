@@ -1751,7 +1751,7 @@ if UserID == our_id then
 return sendMsg(ChatID,MsgID,"👤*¦* عذرا لا يمكنني رفع بوت \n📛") 
 end
 GetUserID(UserID,function(arg,data)
-USERNAME = ResolveUserName(data):sub([[\]],"")
+USERNAME = ResolveUserName(data):gsub([[\]],"")
 USERCAR = utf8.len(USERNAME)
 if redis:sismember(boss..':SUDO_BOT:',arg.UserID) then 
 SendMention(arg.ChatID,arg.UserID,arg.MsgID,'👤¦ العضو » '..USERNAME..' \n🎫¦ الايدي » {'..arg.UserID..'}\n🛠¦ انه بالتأكيد مطور \n✓️',12,utf8.len(USERNAME)) 
@@ -1789,7 +1789,7 @@ GetMsgInfo(msg.chat_id_,msg.reply_id,function(arg,data)
 if not data.sender_user_id_ then return sendMsg(arg.ChatID,arg.MsgID,"📛*¦* عذرا هذا العضو ليس موجود ضمن المجموعات \n❕") end
 local UserID = data.sender_user_id_
 GetUserID(UserID,function(arg,data)
-USERNAME = ResolveUserName(data):sub([[\]],"")
+USERNAME = ResolveUserName(data):gsub([[\]],"")
 USERCAR = utf8.len(USERNAME)
 if not redis:sismember(boss..':SUDO_BOT:',arg.UserID) then 
 SendMention(arg.ChatID,arg.UserID,arg.MsgID,'👤¦ العضو » '..USERNAME..' \n🎫¦ الايدي » {'..arg.UserID..'}\n🛠¦ انه بالتأكيد ليس مطور \n✓️',12,utf8.len(USERNAME)) 
