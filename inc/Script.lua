@@ -3221,8 +3221,12 @@ text = [[
 ]]..SUDO_USER
 GetUserID(msg.sender_user_id_,function(arg,data)
 msg = arg.msg
-local textD = redis:get(boss..":awamer_Klesha_m:") or text
+local textD = redis:get(boss..":awamer_Klesha_m:")
+if textD then
 textD = Flter_Markdown(convert_Klmat(msg,data,textD,true))
+else
+  textD = text
+end
 sendMsg(msg.chat_id_,msg.id_,textD)
 end,{msg=msg})
 return false
@@ -3270,9 +3274,13 @@ local text =[[
 
 GetUserID(msg.sender_user_id_,function(arg,data)
   msg = arg.msg
-  local textD = redis:get(boss..":awamer_Klesha_m1:") or text
-  textD = Flter_Markdown(convert_Klmat(msg,data,textD,true))
-  sendMsg(msg.chat_id_,msg.id_,textD)
+  local textD = redis:get(boss..":awamer_Klesha_m1:")
+  if textD then
+    textD = Flter_Markdown(convert_Klmat(msg,data,textD,true))
+    else
+      textD = text
+    end
+      sendMsg(msg.chat_id_,msg.id_,textD)
   end,{msg=msg})
   return false
 end
@@ -3314,9 +3322,13 @@ local text = [[
 ]]..SUDO_USER
 GetUserID(msg.sender_user_id_,function(arg,data)
   msg = arg.msg
-  local textD = redis:get(boss..":awamer_Klesha_m2:") or text
-  textD = Flter_Markdown(convert_Klmat(msg,data,textD,true))
-  sendMsg(msg.chat_id_,msg.id_,textD)
+  local textD = redis:get(boss..":awamer_Klesha_m2:")
+  if textD then
+    textD = Flter_Markdown(convert_Klmat(msg,data,textD,true))
+    else
+      textD = text
+    end
+      sendMsg(msg.chat_id_,msg.id_,textD)
   end,{msg=msg})
   return false
 end
@@ -3372,9 +3384,13 @@ local text = [[
 ]]..SUDO_USER
 GetUserID(msg.sender_user_id_,function(arg,data)
   msg = arg.msg
-  local textD = redis:get(boss..":awamer_Klesha_m3:") or text
-  textD = Flter_Markdown(convert_Klmat(msg,data,textD,true))
-  sendMsg(msg.chat_id_,msg.id_,textD)
+  local textD = redis:get(boss..":awamer_Klesha_m3:")
+  if textD then
+    textD = Flter_Markdown(convert_Klmat(msg,data,textD,true))
+    else
+      textD = text
+    end
+      sendMsg(msg.chat_id_,msg.id_,textD)
   end,{msg=msg})
   return false
 end
@@ -3410,9 +3426,13 @@ local text = [[
 ]]..SUDO_USER
 GetUserID(msg.sender_user_id_,function(arg,data)
   msg = arg.msg
-  local textD = redis:get(boss..":awamer_Klesha_mtwr:") or text
-  textD = Flter_Markdown(convert_Klmat(msg,data,textD,true))
-  sendMsg(msg.chat_id_,msg.id_,textD)
+  local textD = redis:get(boss..":awamer_Klesha_mtwr:")
+  if textD then
+    textD = Flter_Markdown(convert_Klmat(msg,data,textD,true))
+    else
+      textD = text
+    end
+      sendMsg(msg.chat_id_,msg.id_,textD)
   end,{msg=msg})
   return false
 end
@@ -3439,9 +3459,13 @@ local text = [[
 ]]..SUDO_USER
 GetUserID(msg.sender_user_id_,function(arg,data)
   msg = arg.msg
-  local textD = redis:get(boss..":awamer_Klesha_mrd:") or text
-  textD = Flter_Markdown(convert_Klmat(msg,data,textD,true))
-  sendMsg(msg.chat_id_,msg.id_,textD)
+  local textD = redis:get(boss..":awamer_Klesha_mrd:")
+  if textD then
+    textD = Flter_Markdown(convert_Klmat(msg,data,textD,true))
+    else
+      textD = text
+    end
+      sendMsg(msg.chat_id_,msg.id_,textD)
   end,{msg=msg})
   return false
 end
@@ -3458,8 +3482,12 @@ local text = [[
 ]]
 GetUserID(msg.sender_user_id_,function(arg,data)
   msg = arg.msg
-  local textD = redis:get(boss..":awamer_Klesha_mf:") or text
+  local textD = redis:get(boss..":awamer_Klesha_mf:")
+  if textD then
   textD = Flter_Markdown(convert_Klmat(msg,data,textD,true))
+  else
+    textD = text
+  end
   sendMsg(msg.chat_id_,msg.id_,textD)
   end,{msg=msg})
   return false
