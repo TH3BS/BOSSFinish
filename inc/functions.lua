@@ -433,7 +433,7 @@ download_file('https://raw.githubusercontent.com/TH3BS/BOSS/master/inc/Script.lu
 if edit then EditMsg(msg.chat_id_,msg.id_,'80% - |█████████   |') end
 download_file('https://raw.githubusercontent.com/TH3BS/BOSS/master/inc/functions.lua','./inc/functions.lua')
 if edit then EditMsg(msg.chat_id_,msg.id_,'100% - |█████████████|\n\n🔝*¦* تم تحديث السورس الى اصدار *v'..redis:get(boss..":VERSION")..'*\n📟*¦* تم اعاده تشغيل السورس بنجاح') end
-if edit then end dofile("./inc/Run.lua") end
+if edit then dofile("./inc/Run.lua") end
 print("Update Source And Reload ~ ./inc/Run.lua")
 
 end
