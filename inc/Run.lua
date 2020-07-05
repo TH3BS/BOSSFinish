@@ -26,7 +26,6 @@ end
 
 if not Er_utf8 then
 print("('\n\27[1;31m￤Pkg >> UTF_8 is Not installed.'\n\27[0m￤")
-os.execute("sudo luarocks install luautf8")
 os.exit()
 end
 
@@ -684,7 +683,7 @@ end
 	elseif data.user_.type_.ID == "UserTypeGeneral" then
 	local CheckUser = redis:hgetall(boss..'username:'..data.user_.id_).username
 	if data.user_.username_  then 
-	USERNAME = '@'..data.user_.username_:gsub('_',[[\_]])
+	USERNAME = '@'..data.user_.username_
 	else
 	USERNAME = data.user_.first_name_..' '..(data.user_.last_name_ or "" )
 	end	
