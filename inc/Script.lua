@@ -3236,7 +3236,7 @@ if MsgText[1]== 'م1' then
 if not msg.Admin then return "📛*¦* هذا الامر يخص {الادمن,المدير,المنشئ,المطور} فقط  \n🚶" end
 SUDO_USER = redis:hgetall(boss..'username:'..SUDO_ID).username
 if SUDO_USER:match('@[%a%d_]+') then 
-SUDO_USER = "🗯*┇* راسلني للاستفسار 💡↭  "..SUDO_USER
+SUDO_USER = "🗯*┇* راسلني للاستفسار 💡↭  ["..SUDO_USER.."]"
 else
 SUDO_USER = ""
 end
@@ -3290,7 +3290,7 @@ if MsgText[1]== 'م2' then
 if not msg.Admin then return "📛*¦* هذا الامر يخص {الادمن,المدير,المنشئ,المطور} فقط  \n🚶" end
 SUDO_USER = redis:hgetall(boss..'username:'..SUDO_ID).username
 if SUDO_USER:match('@[%a%d_]+') then 
-SUDO_USER = "🗯*┇* راسلني للاستفسار 💡↭  "..SUDO_USER
+  SUDO_USER = "🗯*┇* راسلني للاستفسار 💡↭  ["..SUDO_USER.."]"
 else
 SUDO_USER = ""
 end
@@ -3337,7 +3337,7 @@ if MsgText[1]== 'م3' then
 if not msg.Admin then return "📛*¦* هذا الامر يخص {الادمن,المدير,المنشئ,المطور} فقط  \n🚶" end
 SUDO_USER = redis:hgetall(boss..'username:'..SUDO_ID).username
 if SUDO_USER:match('@[%a%d_]+') then 
-SUDO_USER = "🗯*┇* راسلني للاستفسار 💡↭  "..SUDO_USER
+  SUDO_USER = "🗯*┇* راسلني للاستفسار 💡↭  ["..SUDO_USER.."]"
 else
 SUDO_USER = ""
 end
@@ -3399,7 +3399,7 @@ if MsgText[1]== "م المطور" then
 if not msg.SudoBase then return "🔅¦ للمطور الاساسي فقط  🎖" end
 SUDO_USER = redis:hgetall(boss..'username:'..SUDO_ID).username
 if SUDO_USER:match('@[%a%d_]+') then 
-SUDO_USER = "🗯*┇* راسلني للاستفسار 💡↭  "..SUDO_USER
+  SUDO_USER = "🗯*┇* راسلني للاستفسار 💡↭  ["..SUDO_USER.."]"
 else
 SUDO_USER = ""
 end
@@ -3441,7 +3441,7 @@ if MsgText[1]== 'اوامر الرد' then
 if not msg.Director then return "📛*¦* هذا الامر يخص {المطور,المنشئ,المدير} فقط  \n🚶" end
 SUDO_USER = redis:hgetall(boss..'username:'..SUDO_ID).username
 if SUDO_USER:match('@[%a%d_]+') then 
-SUDO_USER = "🗯*┇* راسلني للاستفسار 💡↭  "..SUDO_USER
+  SUDO_USER = "🗯*┇* راسلني للاستفسار 💡↭  ["..SUDO_USER.."]"
 else
 SUDO_USER = ""
 end
