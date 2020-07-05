@@ -213,9 +213,7 @@ end
 --================================{{  GetChannelFull  }} ===================================
 function download_file(Link,Bath)
 local Get_Files, res = https.request(Link)
-print(res)
 if res == 200 then
-print("DONLOADING_FROM_URL: "..Link)
 local FileD = io.open(Bath,'w+')
 FileD:write(Get_Files)
 FileD:close()
