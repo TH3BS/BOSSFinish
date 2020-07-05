@@ -16,19 +16,19 @@
 function unlock_KickBan(msg)
 if not msg.Creator then return "📛*¦* هذا الامر يخص {المطور,المنشئ} فقط  \n🚶" end
 if not redis:get(boss.."lock_KickBan"..msg.chat_id_) then 
-return SendMention(msg.chat_id_,msg.sender_user_id_,msg.id_,"🙋🏼‍♂️ » عزيزي "..msg.TheRankCmd.." امر الحظر والطرد بالتأكيد معطل\n✓" ,16,utf8.len(msg.TheRankCmd)) 
+return SendMention(msg.chat_id_,msg.sender_user_id_,msg.id_,"🙋🏼‍♂️ » عزيزي "..msg.TheRankCmd.." امر الحظر والطرد بالتأكيد مفعل\n✓" ,16,utf8.len(msg.TheRankCmd)) 
 else
 redis:del(boss.."lock_KickBan"..msg.chat_id_) 
-return SendMention(msg.chat_id_,msg.sender_user_id_,msg.id_,"🙋🏼‍♂️ » عزيزي "..msg.TheRankCmd.." تم تعطيل امر الحظر والطرد \n✓" ,16,utf8.len(msg.TheRankCmd)) 
+return SendMention(msg.chat_id_,msg.sender_user_id_,msg.id_,"🙋🏼‍♂️ » عزيزي "..msg.TheRankCmd.." تم تفعيل امر الحظر والطرد \n✓" ,16,utf8.len(msg.TheRankCmd)) 
 end 
 end
  
 function lock_KickBan(msg)
 if not msg.Creator then return "📛*¦* هذا الامر يخص {المطور,المنشئ} فقط  \n🚶" end
 if redis:get(boss.."lock_KickBan"..msg.chat_id_) then 
-return SendMention(msg.chat_id_,msg.sender_user_id_,msg.id_,"🙋🏼‍♂️ » عزيزي "..msg.TheRankCmd.." امر الحظر والطرد مفعل مسبقاً \n✓" ,16,utf8.len(msg.TheRankCmd)) 
+return SendMention(msg.chat_id_,msg.sender_user_id_,msg.id_,"🙋🏼‍♂️ » عزيزي "..msg.TheRankCmd.." امر الحظر والطرد معطل مسبقاً \n✓" ,16,utf8.len(msg.TheRankCmd)) 
 else redis:set(boss.."lock_KickBan"..msg.chat_id_,true)
-return SendMention(msg.chat_id_,msg.sender_user_id_,msg.id_,"🙋🏼‍♂️ » عزيزي "..msg.TheRankCmd.." تم تفعيل امر الحظر والطرد \n✓" ,16,utf8.len(msg.TheRankCmd)) 
+return SendMention(msg.chat_id_,msg.sender_user_id_,msg.id_,"🙋🏼‍♂️ » عزيزي "..msg.TheRankCmd.." تم تعطيل امر الحظر والطرد \n✓" ,16,utf8.len(msg.TheRankCmd)) 
 end
 end 
 
