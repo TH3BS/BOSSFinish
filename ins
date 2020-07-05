@@ -5,7 +5,7 @@
 #      ███    ███ ███    ███   ███    █▀    ███    █▀
 #     ▄███▄▄▄██▀  ███    ███   ███          ███
 #    ▀▀███▀▀▀██▄  ███    ███ ▀███████████ ▀███████████ ¦ Dev : @TH3BOSS
-#      ███    ██▄ ███    ███          ███          ███ ¦ Dev : @BLCON
+#      ███    ██▄ ███    ███          ███          ███ ¦ Dev : @OMMMM
 #      ███    ███ ███    ███    ▄█    ███    ▄█    ███
 #    ▄█████████▀   ▀██████▀   ▄████████▀   ▄████████▀  ¦ Source TH3BOSS BY @TH3BS
 #---------------------------------------------------------------------
@@ -29,7 +29,7 @@ echo -e "   ███    ███ ███    ███   ███    ██�
 echo -e "   ███    ███ ███    ███   ███    █▀    ███    █▀"
 echo -e "  ▄███▄▄▄██▀  ███    ███   ███          ███"
 echo -e " ▀▀███▀▀▀██▄  ███    ███ ▀███████████ ▀███████████ ¦ Dev : @TH3BOSS"
-echo -e "   ███    ██▄ ███    ███          ███          ███ ¦ Dev : @BLCON"
+echo -e "   ███    ██▄ ███    ███          ███          ███ ¦ Dev : @OMMMM"
 echo -e "   ███    ███ ███    ███    ▄█    ███    ▄█    ███"
 echo -e " ▄█████████▀   ▀██████▀   ▄████████▀   ▄████████▀  ¦ Source TH3BOSS BY @TH3BS"
 echo -e " ---------------------------------------------------------------------"
@@ -47,7 +47,7 @@ echo -e "   ███    ███ ███    ███   ███    ██�
 echo -e "   ███    ███ ███    ███   ███    █▀    ███    █▀"
 echo -e "  ▄███▄▄▄██▀  ███    ███   ███          ███"
 echo -e " ▀▀███▀▀▀██▄  ███    ███ ▀███████████ ▀███████████ ¦ Dev : @TH3BOSS"
-echo -e "   ███    ██▄ ███    ███          ███          ███ ¦ Dev : @BLCON"
+echo -e "   ███    ██▄ ███    ███          ███          ███ ¦ Dev : @OMMMM"
 echo -e "   ███    ███ ███    ███    ▄█    ███    ▄█    ███"
 echo -e " ▄█████████▀   ▀██████▀   ▄████████▀   ▄████████▀  ¦ Source TH3BOSS BY @TH3BS"
 echo -e " ---------------------------------------------------------------------"
@@ -89,11 +89,21 @@ echo -e "\x1B[01;90m\n¦ software-properties-common installing ... \n\x1B[0m"
 sudo apt-get install software-properties-common -y
 echo -e "\x1B[01;90m\n¦ ubuntu-toolchain installing ...\n \x1B[0m"
 sudo add-apt-repository ppa:ubuntu-toolchain-r/test -y
-# BY _ [ OMAR ALSARY >> @BLCON | MOHAMED HISHAM >> @TH3BOSS ]
+# BY _ [ >> @OMMMM | MOHAMED HISHAM >> @TH3BOSS ]
 echo -e "\x1B[01;90m\n¦ install Modiles Pkgs ... \n\n\x1B[0m"
 
 sudo apt-get install libreadline-dev -y libconfig-dev -y libssl-dev -y lua5.2 -y liblua5.2-dev -y lua-socket -y lua-sec -y lua-expat -y libevent-dev -y make unzip git redis-server autoconf g++ -y libjansson-dev -y libpython-dev -y expat libexpat1-dev -y curl -y htop -y wget -y
 
+
+
+echo -e "\x1B[01;90m\n¦ screen installing ... \n\x1B[0m"
+sudo apt-get install screen -y
+echo -e "\x1B[01;90m\n¦ libstdc++6 installing ... \n\x1B[0m"
+sudo apt-get install libstdc++6 -y
+echo -e "\x1B[01;90m\n¦ lua-lgi installing ... \n\x1B[0m"
+sudo apt-get install lua-lgi -y
+echo -e "\x1B[01;90m\n¦ libnotify installing ... \n\x1B[0m"
+sudo apt-get install libnotify-dev -y
 echo -e "\x1B[01;90m\n¦ install luarocks v3.0.4 ... \n\n\x1B[0m"
 echo -e "\x1B[01;90m\n¦ Download luarocks v3.0.4 ... \n\x1B[0m"
 wget https://luarocks.org/releases/luarocks-3.0.4.tar.gz
@@ -116,16 +126,6 @@ sudo service redis-server start
 sudo apt-get update -y
 echo -e "\x1B[01;90m\n¦  g++-4.7 -y c++-4.7 installing ... \n\x1B[0m"
 sudo apt-get install g++-4.7 -y c++-4.7
-
-echo -e "\x1B[01;90m\n¦ screen installing ... \n\x1B[0m"
-sudo apt-get install screen -y
-echo -e "\x1B[01;90m\n¦ libstdc++6 installing ... \n\x1B[0m"
-sudo apt-get install libstdc++6 -y
-echo -e "\x1B[01;90m\n¦ lua-lgi installing ... \n\x1B[0m"
-sudo apt-get install lua-lgi -y
-echo -e "\x1B[01;90m\n¦ libnotify installing ... \n\x1B[0m"
-sudo apt-get install libnotify-dev -y
-
 echo -e "${WHITB}\n¦ Convert TimeZone To Asia/Baghdad  ... \n${CNIL}"
 sudo timedatectl set-timezone Asia/Baghdad
 sudo chmod +x TG
