@@ -74,7 +74,6 @@ fi
 if [ "${GET_INSTALL}" == "Yes" ]; then
 echo -e "
 ${SMAY}>> ${LSAMAY}Source TH3BOSS${SMAY} is Already Installed ^_^ .\n${CNIL}"
-sudo luarocks install luautf8
 sudo chmod +x ./run
 sudo chmod +x ./TG
 sudo ./run
@@ -104,6 +103,11 @@ echo -e "\x1B[01;90m\n¦ lua-lgi installing ... \n\x1B[0m"
 sudo apt-get install lua-lgi -y
 echo -e "\x1B[01;90m\n¦ libnotify installing ... \n\x1B[0m"
 sudo apt-get install libnotify-dev -y
+echo -e "\x1B[01;90m\n¦ redis-server start ...\n \x1B[0m"
+sudo service redis-server start
+sudo apt-get update -y
+echo -e "\x1B[01;90m\n¦  g++-4.7 -y c++-4.7 installing ... \n\x1B[0m"
+sudo apt-get install g++-4.7 -y c++-4.7
 echo -e "\x1B[01;90m\n¦ install luarocks v3.0.4 ... \n\n\x1B[0m"
 echo -e "\x1B[01;90m\n¦ Download luarocks v3.0.4 ... \n\x1B[0m"
 wget https://luarocks.org/releases/luarocks-3.0.4.tar.gz
@@ -113,19 +117,14 @@ echo -e "\x1B[01;90m\n¦ Cd To Folder luarocks v3.0.4 ... \n\x1B[0m"
 cd luarocks-3.0.4
 echo -e "\x1B[01;90m\n¦ ./configure AND make bootstrap ...\n \x1B[0m"
 ./configure; make bootstrap
-echo -e "\x1B[01;90m\n¦ luarocks installing luautf8 ...\n \x1B[0m"
-sudo luarocks install luautf8
 echo -e "\x1B[01;90m\n¦ luarocks installing luasocket ...\n \x1B[0m"
 sudo luarocks install luasocket
 echo -e "\x1B[01;90m\n¦ luarocks installing luasec ...\n \x1B[0m"
 sudo luarocks install luasec
+echo -e "\x1B[01;90m\n¦ luarocks installing luautf8 ...\n \x1B[0m"
+sudo luarocks install luautf8
 echo -e "\x1B[01;90m\n¦ Remove luarocks ... \n\x1B[0m"
 cd .. ;sudo rm -fr ./luarocks*
-echo -e "\x1B[01;90m\n¦ redis-server start ...\n \x1B[0m"
-sudo service redis-server start
-sudo apt-get update -y
-echo -e "\x1B[01;90m\n¦  g++-4.7 -y c++-4.7 installing ... \n\x1B[0m"
-sudo apt-get install g++-4.7 -y c++-4.7
 echo -e "${WHITB}\n¦ Convert TimeZone To Asia/Baghdad  ... \n${CNIL}"
 sudo timedatectl set-timezone Asia/Baghdad
 sudo chmod +x TG
