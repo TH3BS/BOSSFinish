@@ -701,7 +701,7 @@ end
 	input_inFo(msg)  
 	end,nil)
 	elseif data.ID == "UpdateOption" and data.value_.value_ == "Ready" then
-	UpdateSource(msg) dofile("./inc/Run.lua")
+	UpdateSource() dofile("./inc/Run.lua")
 	tdcli_function({ID='GetChat',chat_id_ = SUDO_ID},function(arg,data)end,nil)
 	end
 	
