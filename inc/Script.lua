@@ -1960,9 +1960,9 @@ if data.last_name_ then Name = data.first_name_ .." "..data.last_name_ end
 if data.username_ then USERNAME = "💠¦ المعرف •⊱ @["..data.username_.."] ⊰•\n" end 
 SUDO_USER = redis:hgetall(boss..'username:'..SUDO_ID).username
 if SUDO_USER:match('@[%a%d_]+') then 
-SUDO_USER = "👨🏻‍💻¦ مـطـور البوت •⊱ "..SUDO_USER.." ⊰•\n"
+  SUDO_USERR = "👨🏻‍💻¦ مـطـور البوت •⊱ ["..SUDO_USER.."] ⊰•\n"
 else
-SUDO_USER = ""
+  SUDO_USERR = ""
 end
 local Get_info = "👨🏽‍🔧¦ اهـلا بـك عزيزي في معلوماتك 🥀 \n"
 .."ـ.——————————\n"
@@ -1984,7 +1984,7 @@ local Get_info = "👨🏽‍🔧¦ اهـلا بـك عزيزي في معلوم
 .."📬¦ الـتـعـديـل •⊱ { `"..edited.."` } ⊰•\n\n"
 .."📊¦ تـفـاعـلـك  •⊱ "..Get_Ttl(msgs).." ⊰•\n"
 .."ـ.——————————\n"
-..SUDO_USER
+..SUDO_USERR
 sendMsg(arg.chat_id_,arg.id_,Get_info)    
 end,{chat_id_=msg.chat_id_,id_=msg.id_,TheRank=msg.TheRank})
 return false
@@ -2640,14 +2640,14 @@ local Photo_Weloame = redis:get(boss..':WELCOME_BOT')
 if Photo_Weloame then
 SUDO_USER = redis:hgetall(boss..'username:'..SUDO_ID).username
 if SUDO_USER:match('@[%a%d_]+') then 
-SUDO_USER = "⚖️¦ مـعرف آلمـطـور  » "..SUDO_USER:gsub([[\_]],'_').." 🌿\n👨🏽‍🔧"
+  SUDO_USERR = "⚖️¦ مـعرف آلمـطـور  » ["..SUDO_USER.."] 🌿\n👨🏽‍🔧"
 else
-SUDO_USER = ""
+  SUDO_USERR = ""
 end
 sendPhoto(msg.chat_id_,msg.id_,Photo_Weloame,[[💯¦ مـرحبآ آنآ بوت آسـمـي ]]..redis:get(boss..':NameBot:')..[[ 🎖
 💰¦ آختصـآصـي حمـآيهہ‏‏ آلمـجمـوعآت
 📛¦ مـن آلسـبآم وآلتوجيهہ‏‏ وآلتگرآر وآلخ...
-]]..SUDO_USER) 
+]]..SUDO_USERR) 
 return false
 else
 return "📛| لا توجد صوره مضافه للترحيب في البوت \n📌| لاضافه صوره الترحيب ارسل `ضع صوره للترحيب`"
@@ -3201,9 +3201,9 @@ if MsgText[1] == "الاوامر" then
 if not msg.Admin then return "📛*¦* هذا الامر يخص {الادمن,المدير,المنشئ,المطور} فقط  \n🚶" end
 SUDO_USER = redis:hgetall(boss..'username:'..SUDO_ID).username
 if SUDO_USER:match('@[%a%d_]+') then 
-SUDO_USER = " ‏‎‏❋¦ رآسـلني للآسـتفسـآر ☜ { "..SUDO_USER.." } ✓ "
+  SUDO_USERR = " ‏‎‏❋¦ رآسـلني للآسـتفسـآر ☜ { ["..SUDO_USER.."] } ✓ "
 else
-SUDO_USER = ""
+  SUDO_USERR = ""
 end
 text = [[
       ❂
@@ -3218,7 +3218,7 @@ text = [[
 📁¦ اوامر الملفات » لآدآرهہ‏‏ مــلفآت آلبوت
 
 
-]]..SUDO_USER
+]]..SUDO_USERR
 GetUserID(msg.sender_user_id_,function(arg,data)
 msg = arg.msg
 local textD = redis:get(boss..":awamer_Klesha_m:")
@@ -3236,9 +3236,9 @@ if MsgText[1]== 'م1' then
 if not msg.Admin then return "📛*¦* هذا الامر يخص {الادمن,المدير,المنشئ,المطور} فقط  \n🚶" end
 SUDO_USER = redis:hgetall(boss..'username:'..SUDO_ID).username
 if SUDO_USER:match('@[%a%d_]+') then 
-SUDO_USER = "🗯*┇* راسلني للاستفسار 💡↭  ["..SUDO_USER.."]"
+  SUDO_USERR = "🗯*┇* راسلني للاستفسار 💡↭  ["..SUDO_USER.."]"
 else
-SUDO_USER = ""
+  SUDO_USERR = ""
 end
 local text =[[
 •⊱ {  آوآمر الرفع والتنزيل  } ⊰•
@@ -3270,7 +3270,7 @@ local text =[[
 📛¦ طرد المحذوفين : لطرد الحسابات المحذوفه
 📟¦ كشف البوتات : لاضهار عدد البوتات الموجوده
 
-]]..SUDO_USER
+]]..SUDO_USERR
 
 GetUserID(msg.sender_user_id_,function(arg,data)
   msg = arg.msg
@@ -3290,9 +3290,9 @@ if MsgText[1]== 'م2' then
 if not msg.Admin then return "📛*¦* هذا الامر يخص {الادمن,المدير,المنشئ,المطور} فقط  \n🚶" end
 SUDO_USER = redis:hgetall(boss..'username:'..SUDO_ID).username
 if SUDO_USER:match('@[%a%d_]+') then 
-  SUDO_USER = "🗯*┇* راسلني للاستفسار 💡↭  ["..SUDO_USER.."]"
+  SUDO_USERR = "🗯*┇* راسلني للاستفسار 💡↭  ["..SUDO_USER.."]"
 else
-SUDO_USER = ""
+  SUDO_USERR = ""
 end
 local text = [[
 👨🏽‍✈️¦  اوامر الوضع للمجموعه ::
@@ -3319,7 +3319,7 @@ local text = [[
 🗯¦ المجموعه : لعرض معلومات المجموعه 
 
 ➖➖➖➖➖➖➖
-]]..SUDO_USER
+]]..SUDO_USERR
 GetUserID(msg.sender_user_id_,function(arg,data)
   msg = arg.msg
   local textD = redis:get(boss..":awamer_Klesha_m2:")
@@ -3337,9 +3337,9 @@ if MsgText[1]== 'م3' then
 if not msg.Admin then return "📛*¦* هذا الامر يخص {الادمن,المدير,المنشئ,المطور} فقط  \n🚶" end
 SUDO_USER = redis:hgetall(boss..'username:'..SUDO_ID).username
 if SUDO_USER:match('@[%a%d_]+') then 
-  SUDO_USER = "🗯*┇* راسلني للاستفسار 💡↭  ["..SUDO_USER.."]"
+  SUDO_USERR = "🗯*┇* راسلني للاستفسار 💡↭  ["..SUDO_USER.."]"
 else
-SUDO_USER = ""
+  SUDO_USERR = ""
 end
 local text = [[
 
@@ -3381,7 +3381,7 @@ local text = [[
 🗨*¦* تفعيل «» تعطيل •⊱  الايدي ⊰•
 🔅*¦*ـ➖➖➖➖➖
 
-]]..SUDO_USER
+]]..SUDO_USERR
 GetUserID(msg.sender_user_id_,function(arg,data)
   msg = arg.msg
   local textD = redis:get(boss..":awamer_Klesha_m3:")
@@ -3399,9 +3399,9 @@ if MsgText[1]== "م المطور" then
 if not msg.SudoBase then return "🔅¦ للمطور الاساسي فقط  🎖" end
 SUDO_USER = redis:hgetall(boss..'username:'..SUDO_ID).username
 if SUDO_USER:match('@[%a%d_]+') then 
-  SUDO_USER = "🗯*┇* راسلني للاستفسار 💡↭  ["..SUDO_USER.."]"
+  SUDO_USERR = "🗯*┇* راسلني للاستفسار 💡↭  ["..SUDO_USER.."]"
 else
-SUDO_USER = ""
+  SUDO_USERR = ""
 end
 local text = [[
 📌¦ اوامر المطور 🃏
@@ -3423,7 +3423,7 @@ local text = [[
 🔅¦ تحديث السورس: لتحديث السورس الى اصدار احدث
 🔅¦ـ➖➖➖➖➖
 
-]]..SUDO_USER
+]]..SUDO_USERR
 GetUserID(msg.sender_user_id_,function(arg,data)
   msg = arg.msg
   local textD = redis:get(boss..":awamer_Klesha_mtwr:")
@@ -3441,9 +3441,9 @@ if MsgText[1]== 'اوامر الرد' then
 if not msg.Director then return "📛*¦* هذا الامر يخص {المطور,المنشئ,المدير} فقط  \n🚶" end
 SUDO_USER = redis:hgetall(boss..'username:'..SUDO_ID).username
 if SUDO_USER:match('@[%a%d_]+') then 
-  SUDO_USER = "🗯*┇* راسلني للاستفسار 💡↭  ["..SUDO_USER.."]"
+  SUDO_USERR = "🗯*┇* راسلني للاستفسار 💡↭  ["..SUDO_USER.."]"
 else
-SUDO_USER = ""
+  SUDO_USERR = ""
 end
 local text = [[
 🗯¦ جميع اوامر الردود 
@@ -3456,7 +3456,7 @@ local text = [[
 🔅¦ مسح رد عام : لمسح الرد العام 
 🔅¦ مسح الردود العامه : لمسح كل ردود العامه
 🔅¦ـ➖➖➖➖➖
-]]..SUDO_USER
+]]..SUDO_USERR
 GetUserID(msg.sender_user_id_,function(arg,data)
   msg = arg.msg
   local textD = redis:get(boss..":awamer_Klesha_mrd:")
@@ -3688,9 +3688,9 @@ else
 redis:sadd(boss..'users',msg.sender_user_id_)
 SUDO_USER = redis:hgetall(boss..'username:'..SUDO_ID).username
 if SUDO_USER:match('@[%a%d_]+') then 
-SUDO_USERM = "⚖️¦ مـعرف آلمـطـور  : "..SUDO_USER
+  SUDO_USERR = "⚖️¦ مـعرف آلمـطـور  : ["..SUDO_USER.."]"
 else
-SUDO_USERM = ""
+  SUDO_USERR = ""
 end
 
 
@@ -3698,7 +3698,7 @@ text = [[💯¦ مـرحبآ آنآ بوت آسـمـي []]..redis:get(boss..':N
 💰¦ آختصـآصـي حمـآيهہ‏‏ آلمـجمـوعآت
 📛¦ مـن آلسـبآم وآلتوجيهہ‏‏ وآلتگرآر وآلخ...
 🚸¦ فقط آلمـطـور يسـتطـيع تفعيل آلبوت
-]]..SUDO_USERM..[[
+]]..SUDO_USERR..[[
 
 👨🏽‍🔧]]
 GetUserID(msg.sender_user_id_,function(arg,data)
@@ -3772,12 +3772,12 @@ return sendMsg(msg.chat_id_,msg.id_,"📛¦ عذرآ لآ يمـگنگ آرسـ�
 end
 SUDO_USER = redis:hgetall(boss..'username:'..SUDO_ID).username
 if SUDO_USER:match('@[%a%d_]+') then 
-SUDO_USER = "\n🏌 "..SUDO_USER
+SUDO_USERR = "\n🏌 "..SUDO_USER
 else
-SUDO_USER = ""
+  SUDO_USERR = ""
 end
 redis:setex(boss.."USER_MSG_TWASEL"..msg.date_,43200,msg.id_)
-sendMsg(msg.chat_id_,msg.id_,"🗯¦ تم آرسـآل رسـآلتگ آلى آلمـطـور\n📬¦ سـآرد عليگ في آقرب وقت["..SUDO_USER.."]")
+sendMsg(msg.chat_id_,msg.id_,"🗯¦ تم آرسـآل رسـآلتگ آلى آلمـطـور\n📬¦ سـآرد عليگ في آقرب وقت["..SUDO_USERR.."]")
 fwdMsg(SUDO_ID,msg.chat_id_,msg.id_)
 end
 return false
@@ -5406,20 +5406,20 @@ if redis:get(boss..'CheckExpire::'..msg.chat_id_) then
 local ExpireDate = redis:ttl(boss..'ExpireDate:'..msg.chat_id_)
 SUDO_USER = redis:hgetall(boss..'username:'..SUDO_ID).username
 if SUDO_USER:match('@[%a%d_]+') then 
-SUDO_USER = "\n👨🏾‍🔧¦ راسل المطور للتجديد "..SUDO_USER
+  SUDO_USERR = "\n👨🏾‍🔧¦ راسل المطور للتجديد ["..SUDO_USER.."]"
 else
-SUDO_USER = ""
+  SUDO_USERR = ""
 end
 if not ExpireDate and not msg.SudoUser then
 rem_data_group(msg.chat_id_)
 sendMsg(SUDO_ID,0,'🕵🏼️‍♀️¦ انتهى الاشتراك في احد المجموعات ✋🏿\n👨🏾‍🔧¦ المجموعه : '..FlterName(redis:get(boss..'group:name'..msg.chat_id_))..'🍃\n💂🏻‍♀️¦ ايدي : '..msg.chat_id_)
-sendMsg(msg.chat_id_,0,'🕵🏼️‍♀️¦ انتهى الاشتراك البوت✋🏿\n💂🏻‍♀️¦ سوف اغادر المجموعه فرصه سعيده 👋🏿'..SUDO_USER..' 🍃')
+sendMsg(msg.chat_id_,0,'🕵🏼️‍♀️¦ انتهى الاشتراك البوت✋🏿\n💂🏻‍♀️¦ سوف اغادر المجموعه فرصه سعيده 👋🏿'..SUDO_USERR..' 🍃')
 return StatusLeft(msg.chat_id_,our_id)
 else
 local DaysEx = (redis:ttl(boss..'ExpireDate:'..msg.chat_id_) / 86400)
 if tonumber(DaysEx) > 0.208 and ExpireDate ~= -1 and msg.Admin then
 if tonumber(DaysEx + 1) == 1 and not msg.SudoUser then
-sendMsg(msg.chat_id_,'🕵🏼️‍♀️¦ باقي يوم واحد وينتهي الاشتراك ✋🏿\n '..SUDO_USER..'\n📛')
+sendMsg(msg.chat_id_,'🕵🏼️‍♀️¦ باقي يوم واحد وينتهي الاشتراك ✋🏿\n '..SUDO_USERR..'\n📛')
 end 
 end 
 end
@@ -5728,4 +5728,3 @@ Boss = {
  iBoss = iBoss,
  dBoss = dBoss,
  }
-	
