@@ -762,6 +762,7 @@ if not MsgText[2] and msg.reply_id then
   if not data.sender_user_id_ then return sendMsg(arg.ChatID,arg.MsgID,"📛*¦* عذرا هذا العضو ليس موجود ضمن المجموعات \n❕") end
   local UserID = data.sender_user_id_
   GetUserID(UserID,function(arg,data)
+    if msg.SudoUser then redis:srem(boss..'gban_users',arg.UserID)  end 
     Restrict(arg.ChatID,arg.UserID,2)
     redis:srem(boss..'banned:'..arg.ChatID,arg.UserID)
     StatusLeft(arg.ChatID,arg.UserID)
@@ -775,6 +776,7 @@ if not MsgText[2] and msg.reply_id then
   GetUserName(MsgText[2],function(arg,data)
   if not data.id_ then return sendMsg(arg.ChatID,arg.MsgID,"📛*¦* لآ يوجد عضـو بهہ‌‏ذآ آلمـعرف \n❕") end 
   local UserID = data.id_
+  if msg.SudoUser then redis:srem(boss..'gban_users',UserID)  end 
   Restrict(arg.ChatID,UserID,2)
   redis:srem(boss..'banned:'..arg.ChatID,UserID)
   StatusLeft(arg.ChatID,UserID)
@@ -785,15 +787,12 @@ if not MsgText[2] and msg.reply_id then
   elseif MsgText[2] and MsgText[2]:match('^%d+$') then
   GetUserID(MsgText[2],action_by_id,{msg=msg,cmd="rfaqud"}) 
   end 
-
-
-
 return false
 end
 
 if MsgText[1] == "طرد" then
 if not msg.Admin then return "📛*¦* هذا الامر يخص {الادمن,المدير,المنشئ,المطور} فقط  \n🚶" end
-if redis:get(boss.."lock_KickBan"..msg.chat_id_) then return "📛*¦* الامر معطل من قبل اداره المجموعة  \n🚶" end
+if not msg.Creator and redis:get(boss.."lock_KickBan"..msg.chat_id_) then return "📛*¦* الامر معطل من قبل اداره المجموعة  \n🚶" end
 
 if not MsgText[2] and msg.reply_id then 
 GetMsgInfo(msg.chat_id_,msg.reply_id,function(arg,data)
@@ -872,7 +871,7 @@ end
 
 if MsgText[1] == "حظر" then
 if not msg.Admin then return "📛*¦* هذا الامر يخص {الادمن,المدير,المنشئ,المطور} فقط  \n🚶" end
-if not msg.SuperCreator and redis:get(boss.."lock_KickBan"..msg.chat_id_) then return "📛*¦* الامر معطل من قبل اداره المجموعة  \n🚶" end
+if not msg.Creator and redis:get(boss.."lock_KickBan"..msg.chat_id_) then return "📛*¦* الامر معطل من قبل اداره المجموعة  \n🚶" end
 
 if not MsgText[2] and msg.reply_id then 
 GetMsgInfo(msg.chat_id_,msg.reply_id,function(arg,data)
