@@ -872,7 +872,7 @@ end
 
 if MsgText[1] == "حظر" then
 if not msg.Admin then return "📛*¦* هذا الامر يخص {الادمن,المدير,المنشئ,المطور} فقط  \n🚶" end
-if redis:get(boss.."lock_KickBan"..msg.chat_id_) then return "📛*¦* الامر معطل من قبل اداره المجموعة  \n🚶" end
+if not msg.SuperCreator and redis:get(boss.."lock_KickBan"..msg.chat_id_) then return "📛*¦* الامر معطل من قبل اداره المجموعة  \n🚶" end
 
 if not MsgText[2] and msg.reply_id then 
 GetMsgInfo(msg.chat_id_,msg.reply_id,function(arg,data)
@@ -2640,7 +2640,7 @@ local Photo_Weloame = redis:get(boss..':WELCOME_BOT')
 if Photo_Weloame then
 SUDO_USER = redis:hgetall(boss..'username:'..SUDO_ID).username
 if SUDO_USER:match('@[%a%d_]+') then 
-  SUDO_USERR = "⚖️¦ مـعرف آلمـطـور  » ["..SUDO_USER.."] 🌿\n👨🏽‍🔧"
+  SUDO_USERR = "⚖️¦ مـعرف آلمـطـور  » "..SUDO_USER.." 🌿\n👨🏽‍🔧"
 else
   SUDO_USERR = ""
 end
@@ -2682,7 +2682,7 @@ end
 
 if MsgText[1] == 'تعيين كليشه الايدي عام' or MsgText[1] == 'عام تعيين الايدي' or MsgText[1] == 'تعيين ايدي عام'  or MsgText[1] == 'تعيين كليشة الايدي عام'  then 
 if not msg.SudoUser then return "📛*¦* هذا الامر يخص {المطور} فقط  \n🚶" end
-if not redis:get(boss.."lockidedit") then return "📛*¦* تعيين الايدي معطل من قبل المطور الاساسي  \n🚶" end
+if not msg.SudoBase and not redis:get(boss.."lockidedit") then return "📛*¦* تعيين الايدي معطل من قبل المطور الاساسي  \n🚶" end
 redis:setex(boss..":Witting_KleshaID"..msg.chat_id_..msg.sender_user_id_,1000,true)
 return '📮*¦* حسننا , الان ارسل كليشه الايدي الجديده \n علما ان الاختصارات كالاتي : \n \n{الاسم} : لوضع اسم المستخدم\n{الايدي} : لوضع ايدي المستخدم\n{المعرف} : لوضع معرف المستخدم \n{الرتبه} : لوضع نوع رتبه المستخدم \n{التفاعل} : لوضع تفاعل المستخدم \n{الرسائل} : لاضهار عدد الرسائل \n{النقاط} : لاضهار عدد النقاط \n{التعديل} : لاضهار عدد السحكات \n➼' 
 end
@@ -3688,7 +3688,7 @@ else
 redis:sadd(boss..'users',msg.sender_user_id_)
 SUDO_USER = redis:hgetall(boss..'username:'..SUDO_ID).username
 if SUDO_USER:match('@[%a%d_]+') then 
-  SUDO_USERR = "⚖️¦ مـعرف آلمـطـور  : ["..SUDO_USER.."]"
+  SUDO_USERR = "⚖️¦ مـعرف آلمـطـور  : "..SUDO_USER
 else
   SUDO_USERR = ""
 end
