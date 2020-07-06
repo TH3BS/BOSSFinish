@@ -3793,7 +3793,7 @@ redis:del(boss..'addrd:'..msg.chat_id_..msg.sender_user_id_)
 if utf8.len(msg.text) > 4000 then 
 return sendMsg(msg.chat_id_,msg.id_,"📛¦ عذرا غير مسموح باضافه جواب الرد باكثر من 4000 حرف تم الغاء الامر\n❕")
 end
-redis:hset(boss..'replay:'..msg.chat_id_,klma,Flter_Markdown(msg.text))
+redis:hset(boss..'replay:'..msg.chat_id_,klma,msg.text)
 return sendMsg(msg.chat_id_,msg.id_,'(['..klma..'])\n  ✓ تم اضافت الرد 🚀 \n-')
 elseif msg.content_.ID == "MessagePhoto" then
 if msg.content_.photo_.sizes_[3] then 
@@ -3837,7 +3837,7 @@ redis:del(boss..'addrd_all:'..msg.chat_id_..msg.sender_user_id_)
 if utf8.len(msg.text) > 4000 then 
 return sendMsg(msg.chat_id_,msg.id_,"📛¦ عذرا غير مسموح باضافه جواب الرد باكثر من 4000 حرف تم الغاء الامر\n❕")
 end
-redis:hset(boss..'replay:all',klma,Flter_Markdown(msg.text))
+redis:hset(boss..'replay:all',klma,msg.text)
 return sendMsg(msg.chat_id_,msg.id_,'(['..klma..'])\n  ✓ تم اضافت الرد لكل المجموعات 🚀 ')
 elseif msg.content_.ID == "MessagePhoto" then 
 if msg.content_.photo_.sizes_[3] then 
@@ -5712,7 +5712,14 @@ Boss = {
 "^(ضع رابط)$", 
 "^(نقل ملكيه البوت 📇)$", 
 "^(نقل ملكيه البوت)$", 
-
+"^(مسح كليشه الايدي)$", 
+"^(مسح الايدي)$", 
+"^(مسح ايدي)$", 
+"^(مسح كليشة الايدي)$", 
+"^(مسح كليشه الايدي عام)$", 
+"^(مسح الايدي عام)$", 
+"^(مسح ايدي عام)$", 
+"^(مسح كليشة الايدي عام)$", 
 
 "^(السورس)$",
 "^(سورس)$",
