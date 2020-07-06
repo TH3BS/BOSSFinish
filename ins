@@ -113,15 +113,16 @@ echo -e "\x1B[01;90m\n¦ Download luarocks v3.0.4 ... \n\x1B[0m"
 wget https://luarocks.org/releases/luarocks-3.3.1.tar.gz
 echo -e "\x1B[01;90m\n¦ Unzip File luarocks v3.0.4 ... \n\x1B[0m"
 tar zxpf luarocks-3.3.1.tar.gz
-echo -e "\x1B[01;90m\n¦ Cd To Folder luarocks v3.0.4 ... \n\x1B[0m"
+echo -e "\x1B[01;90m\n¦ Cd To Folder luarocks -3.3.1 ... \n\x1B[0m"
 cd luarocks-3.3.1
 echo -e "\x1B[01;90m\n¦ ./configure ...\n \x1B[0m"
 ./configure && make && sudo make install
-echo -e "\x1B[01;90m\n¦ luarocks installing luasocket ...\n \x1B[0m"
-sudo luarocks install luasocket
 echo -e "\x1B[01;90m\n¦ luarocks installing luasec ...\n \x1B[0m"
 sudo luarocks install luasec
+echo -e "\x1B[01;90m\n¦ luarocks installing luasocket ...\n \x1B[0m"
+sudo luarocks install luasocket
 echo -e "\x1B[01;90m\n¦ luarocks installing luautf8 ...\n \x1B[0m"
+sudo luarocks install luautf8
 echo -e "\x1B[01;90m\n¦ Remove luarocks ... \n\x1B[0m"
 cd .. ;sudo rm -fr ./luarocks*
 echo -e "${WHITB}\n¦ Convert TimeZone To Asia/Baghdad  ... \n${CNIL}"
@@ -129,7 +130,6 @@ sudo timedatectl set-timezone Asia/Baghdad
 sudo chmod +x TG
 sudo chmod +x run
 sudo chmod +x ./run
-sudo luarocks install luautf8
 echo -e "\n
 ${SMAY}>> Installation ${LSAMAY}Source TH3BOSS${SMAY} Completed ^_^ .\n
 Now I Have Information For Your Bot  \n
