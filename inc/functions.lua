@@ -1580,6 +1580,7 @@ boss..'lock_edit'..arg.chat_id_,true,
 boss..'replay'..arg.chat_id_,true,
 boss.."lock_KickBan"..msg.chat_id_,true,
 boss.."lock_mmno3"..msg.chat_id_,true,
+boss.."lock_KickBan"..msg.chat_id_,true,
 boss.."lock_linkk"..msg.chat_id_,true
 )
 redis:sadd(boss..'group:ids',arg.chat_id_) 
