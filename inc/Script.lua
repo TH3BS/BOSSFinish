@@ -2675,6 +2675,7 @@ end
 
 if MsgText[1] == 'مسح كليشه الايدي عام' or MsgText[1] == 'مسح الايدي عام' or MsgText[1] == 'مسح ايدي عام'  or MsgText[1] == 'مسح كليشة الايدي عام'  then 
 if not msg.SudoUser then return "📛*¦* هذا الامر يخص {المطور} فقط  \n🚶" end
+if not msg.SudoBase and not redis:get(boss.."lockidedit") then return "📛*¦* الامر معطل من قبل المطور الاساسي  \n🚶" end
 redis:del(boss..":infoiduser")
 return sendMsg(msg.chat_id_,msg.id_,"📛*¦* تم مسح كليشة الايدي العام بنجاح \n❕")
 end
