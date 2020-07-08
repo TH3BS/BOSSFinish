@@ -701,10 +701,11 @@ local UserID = data.sender_user_id_
 GetUserID(UserID,function(arg,data)
 local USERNAME = ResolveUserName(data)
 NameUser = Hyper_Link_Name(data)
+if data.username_ then UserNameID = "@"..data.username_ else UserNameID = "لا يوجد" end  
 local maseegs = redis:get(boss..'msgs:'..arg.UserID..':'..arg.ChatID) or 1
 local edited = redis:get(boss..':edited:'..arg.ChatID..':'..arg.UserID) or 0
 local content = redis:get(boss..':adduser:'..arg.ChatID..':'..arg.UserID) or 0
-sendMsg(arg.ChatID,arg.MsgID,"🎫┇ايديه » `"..arg.UserID.."`\n📨┇رسائله » "..maseegs.."\n🎟┇معرفه » ["..USERNAME.."]\n📈┇تفاعله » "..Get_Ttl(maseegs).."\n📮┇رتبته » "..Getrtba(arg.UserID,arg.ChatID).."\n⚡️┇تعديلاته » "..edited.."\n☎️┇جهاته » "..content.."") 
+sendMsg(arg.ChatID,arg.MsgID,"🎫┇ايديه » `"..arg.UserID.."`\n📨┇رسائله » "..maseegs.."\n🎟┇معرفه » ["..UserNameID.."]\n📈┇تفاعله » "..Get_Ttl(maseegs).."\n📮┇رتبته » "..Getrtba(arg.UserID,arg.ChatID).."\n⚡️┇تعديلاته » "..edited.."\n☎️┇جهاته » "..content.."") 
 end,{ChatID=arg.ChatID,UserID=UserID,MsgID=arg.MsgID})
 end,{ChatID=msg.chat_id_,MsgID=msg.id_})
 elseif MsgText[2] and MsgText[2]:match('@[%a%d_]+') then
@@ -1613,7 +1614,7 @@ end
 if MsgText[1] == "الغاء منع" then
 if not msg.Admin then return "📛*¦* هذا الامر يخص {الادمن,المدير,المنشئ,المطور} فقط  \n🚶" end
 if MsgText[2] then
-  return RemFilter(msg, MsgText[2]) 
+  return RemFilter(msg,MsgText[2]) 
 elseif msg.reply_id then
   GetMsgInfo(msg.chat_id_,msg.reply_id,function(arg, data)
   if msg.content_.ID == "MessageText" then
@@ -2162,6 +2163,19 @@ if MsgText[1] == "رفع منشئ اساسي" or MsgText[1] == "رفع منشى 
   end
 
   
+if MsgText[1] == 'مسح كلايش التعليمات' then 
+if not msg.SudoBase then return "📛*¦* هذا الامر يخص {مطور اساسي} فقط  \n🚶" end
+ redis:del(boss..":awamer_Klesha_m1:")
+ redis:del(boss..":awamer_Klesha_m2:")
+ redis:del(boss..":awamer_Klesha_m3:")
+ redis:del(boss..":awamer_Klesha_mtwr:")
+ redis:del(boss..":awamer_Klesha_mrd:")
+ redis:del(boss..":awamer_Klesha_mf:")
+ redis:del(boss..":awamer_Klesha_m:")
+
+  sendMsg(msg.chat_id_,msg.id_,"📛*¦* تم مسح كلايش التعليمات  \n❕")
+end
+  
 if MsgText[1] == 'مسح كليشه الايدي' or MsgText[1] == 'مسح الايدي' or MsgText[1] == 'مسح ايدي'  or MsgText[1] == 'مسح كليشة الايدي'  then 
   if not msg.Creator then return "📛*¦* هذا الامر يخص {منشئ اساسي,المنشئ,المطور} فقط  \n🚶" end
   redis:del(boss..":infoiduser_public:"..msg.chat_id_)
@@ -2186,6 +2200,7 @@ if MsgText[1] == "تنزيل الكل" then
     msg.UserID = UserID
     GetUserID(UserID,function(arg,data)
     NameUser = Hyper_Link_Name(data)
+    msg = arg.msg
     UserID = msg.UserID
       if UserID == SUDO_ID then 
       rinkuser = 1
@@ -2282,6 +2297,8 @@ huk = false
     if not data.id_ then return sendMsg(arg.ChatID,arg.MsgID,"📛*¦* لآ يوجد عضـو بهہ‌‏ذآ آلمـعرف \n❕") end 
     local UserID = data.id_
     msg = arg.msg
+    NameUser = Hyper_Link_Name(data)
+
           if UserID == SUDO_ID then 
           rinkuser = 1
           elseif redis:sismember(boss..':SUDO_BOT:',UserID) then 
@@ -2485,7 +2502,7 @@ end
 if MsgText[1] == 'تعيين قائمه الاوامر' then 
   redis:setex(boss..":Witting_awamr_witting"..msg.chat_id_..msg.sender_user_id_,1000,true)
   return '📮*¦* ارسل امر القائمه المراد تعيينهم مثل الاتي "\n|`الاوامر` , `م1` , `م2 `, `م3 `, `م المطور ` , `اوامر الرد `,  `اوامر الملفات` \n➼' 
-  end
+end
 
 
 if MsgText[1] == "رفع مطور" then
@@ -4339,7 +4356,7 @@ end
  
 
 if msg.text and msg.type == "channel" then
-if msg.text:match("^"..Bot_Name.." غادر$") and (msg.SudoBase or msg.SudoBase or msg.Director) then
+if msg.text:match("^"..Bot_Name.." غادر$") and (msg.SudoBase or msg.SuperCreator) then
 sendMsg(msg.chat_id_,msg.id_,'اوك باي 😢💔💯') 
 rem_data_group(msg.chat_id_)
 StatusLeft(msg.chat_id_,our_id)
@@ -4518,6 +4535,7 @@ end
 end 
 
 if (msg.content_.ID == "MessageChatJoinByLink") then
+if redis:get(boss..'welcome:get'..msg.chat_id_) then
 GetUserID(msg.sender_user_id_,function(arg,data)
 welcome = (redis:get(boss..'welcome:msg'..msg.chat_id_) or "🔖¦ مرحباً عزيزي\n🔖¦ نورت المجموعة \n💂🏼‍♀️")
 welcome = welcome:gsub("{القوانين}", redis:get(boss..'rulse:msg'..msg.chat_id_) or "🔖¦ مرحبأ عزيري 👋🏻 القوانين  👇🏻\n🔖¦ ممنوع نشر الروابط \n🔖¦ ممنوع التكلم او نشر صور اباحيه \n🔖¦ ممنوع  اعاده توجيه \n🔖¦ ممنوع التكلم بلطائفه \n🔖¦ الرجاء احترام المدراء والادمنيه 😅\n")
@@ -4536,6 +4554,7 @@ local welcome = welcome:gsub("{التعديل}",edited)
 local welcome = welcome:gsub("{الاسم}",FlterName(data.first_name_..' '..(data.last_name_ or "" ),20))
 sendMsg(msg.chat_id_,msg.id_,Flter_Markdown(welcome)) 
 end)
+end
 return false
 end
 
@@ -5067,6 +5086,7 @@ Replay = redis:hget(boss..'replay_photo:group:',msg.text)
 if Replay then 
 Caption = redis:hget(boss..':caption_replay:'..msg.chat_id_,msg.text)
 Caption = convert_Klmat(msg,data,Caption)
+print(Caption)
 sendPhoto(msg.chat_id_,msg.id_,Replay,Caption)  
 return false
 end
@@ -5557,7 +5577,7 @@ Boss = {
 '^(تنزيل مدير)$',
 '^(تفعيل)$',
 '^(تعطيل)$',
-"^(مسح)$",
+"^(مسح كلايش التعليمات)$",
 
 
 
