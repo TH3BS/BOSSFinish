@@ -914,6 +914,7 @@ function convert_Klmat(msg,data,Replay,MD)
   local NameUser = ResolveName(data)
   local Emsgs = redis:get(boss..'msgs:'..msg.sender_user_id_..':'..msg.chat_id_) or 1
   if data.username_ then UserNameID = "@"..data.username_ else UserNameID = "لا يوجد" end  
+  if Replay then
   Replay = Replay:gsub("{الاسم}",NameUser)
   Replay = Replay:gsub("{الايدي}",msg.sender_user_id_)
   Replay = Replay:gsub("{المعرف}",UserNameID)
@@ -922,6 +923,9 @@ function convert_Klmat(msg,data,Replay,MD)
   Replay = Replay:gsub("{الرسائل}",Emsgs)
   Replay = Replay:gsub("{التعديل}",edited)
   Replay = Replay:gsub("{النقاط}",points)
+  else
+    Replay =""
+  end
   if MD then
   return Replay
   else
@@ -977,34 +981,60 @@ if #monshaas==0 and #monsha==0 and #Owners==0 and #Admins==0 and #mmez==0 then r
 i = 1
 for k,v in pairs(mmez) do
   if not message:match(v) then
-    local info  = redis:hgetall(boss..'username:'..v)
-  message = message ..i.. '-l ['..(info.username or '')..']\n' i=i+1
+  local info  = redis:hgetall(boss..'username:'..v)
+  if info and info.username and info.username:match("@[%a%d_]+") then
+  message = message ..i.."-l ["..info.username..'] \n'
+  else
+  message = message ..i.. '-l ['..info.username..'](t.me/TH3bs) \n'
+  end
+  
+  i=i+1
 end 
 end 
 for k,v in pairs(Admins) do
   if not message:match(v) then
     local info  = redis:hgetall(boss..'username:'..v)
-  message = message ..i.. '-l ['..(info.username or '')..']\n' i=i+1
-end 
+    if info and info.username and info.username:match("@[%a%d_]+") then
+      message = message ..i.."-l ["..info.username..'] \n'
+      else
+      message = message ..i.. '-l ['..info.username..'](t.me/TH3bs) \n'
+      end
+      i=i+1
+    end 
 end 
 for k,v in pairs(Owners) do
   if not message:match(v) then
     local info  = redis:hgetall(boss..'username:'..v)
-  message = message ..i.. '-l ['..(info.username or '')..']\n' i=i+1
-end 
+    if info and info.username and info.username:match("@[%a%d_]+") then
+      message = message ..i.."-l ["..info.username..'] \n'
+      else
+      message = message ..i.. '-l ['..info.username..'](t.me/TH3bs) \n'
+      end
+      i=i+1
+    end 
 end
 for k,v in pairs(monsha) do
   if not message:match(v) then
     local info  = redis:hgetall(boss..'username:'..v)
-  message = message ..i.. '-l ['..(info.username or '')..']\n' i=i+1
-end 
+    if info and info.username and info.username:match("@[%a%d_]+") then
+      message = message ..i.."-l ["..info.username..'] \n'
+      else
+      message = message ..i.. '-l ['..info.username..'](t.me/TH3bs) \n'
+      end
+      i=i+1
+    end 
 end 
  
 for k,v in pairs(monshaas) do
   if not message:match(v) then
   local info  = redis:hgetall(boss..'username:'..v)
-  message = message ..i.. '-l ['..(info.username or '')..']\n' i=i+1
-end 
+  if info and info.username and info.username:match("@[%a%d_]+") then
+    message = message ..i.."-l ["..info.username..'] \n'
+    else
+    message = message ..i.. '-l ['..info.username..'](t.me/TH3bs) \n'
+    end
+    i=i+1
+  end 
 end 
 return message
 end
@@ -1017,7 +1047,11 @@ else
 for k,v in pairs(list) do
 local info  = redis:hgetall(boss..'username:'..v)
 local count = redis:scard(boss..'mtwr_count'..v)
-message = message ..k.. '-l ['..(info.username or '')..'] l » (`' ..v.. '`){'..count..'} \n'
+if info and info.username and info.username:match("@[%a%d_]+") then
+message = message ..k.."-l ["..info.username..'] » (`' ..v.. '`){'..count..'} \n'
+else
+message = message ..k.. '-l ['..info.username..'](t.me/TH3bs) l » (`' ..v.. '`){'..count..'} \n'
+end
 end 
 end
 if utf8.len(message) > 4096 then
@@ -1225,7 +1259,8 @@ end
 function FilterX(msg,text)
   text = tostring(text)
   local var = false
-local list = redis:smembers(boss..':Filter_Word:'..msg.chat_id_)
+if not msg.Admin and not msg.Special then -- للاعضاء فقط  
+  local list = redis:smembers(boss..':Filter_Word:'..msg.chat_id_)
 if #list ~=0 then
 for k,word in pairs(list) do
 if text:match('^('..word..')$') or text:match(word..' .*') or text:match('.* '..word) then
@@ -1238,6 +1273,7 @@ end
 end
 else
 var = false
+end 
 end 
 return var
 end
@@ -1924,7 +1960,9 @@ if cmd == "tfa3l" then
   local maseegs = redis:get(boss..'msgs:'..UserID..':'..ChatID) or 1
   local edited = redis:get(boss..':edited:'..ChatID..':'..UserID) or 0
   local content = redis:get(boss..':adduser:'..ChatID..':'..UserID) or 0
-  sendMsg(ChatID,MsgID,"🎫┇ايديه » `"..UserID.."`\n📨┇رسائله » "..maseegs.."\n🎟┇معرفه » ["..USERNAME.."]\n📈┇تفاعله » "..Get_Ttl(maseegs).."\n📮┇رتبته » "..Getrtba(UserID,ChatID).."\n⚡️┇تعديلاته » "..edited.."\n☎️┇جهاته » "..content.."") 
+  if data.username_ then UserNameID = "@"..data.username_ else UserNameID = "لا يوجد" end  
+
+  sendMsg(ChatID,MsgID,"🎫┇ايديه » `"..UserID.."`\n📨┇رسائله » "..maseegs.."\n🎟┇معرفه » ["..UserNameID.."]\n📈┇تفاعله » "..Get_Ttl(maseegs).."\n📮┇رتبته » "..Getrtba(UserID,ChatID).."\n⚡️┇تعديلاته » "..edited.."\n☎️┇جهاته » "..content.."") 
 end
 
 if cmd == "rfaqud" then  
