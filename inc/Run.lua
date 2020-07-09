@@ -409,7 +409,7 @@ kick_user((msg.adduser or msg.sender_user_id_), msg.chat_id_)
 return false 
 end
 
-if msg.GroupActive and not msg.Special then
+if msg.GroupActive and not msg.Special and not msg.Admin then
 if redis:get(boss..'mute_text'..msg.chat_id_) then --قفل الدردشه
 print("\27[1;31m Chat is Mute \27[0m")
 Del_msg(msg.chat_id_,msg.id_)
