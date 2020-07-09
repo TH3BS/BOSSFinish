@@ -148,7 +148,7 @@ our_id = tonumber(boss)
 ApiBoss = redis:get(boss..":ApiSource")
 ApiToken = "https://api.telegram.org/bot"..Token
 Bot_User = redis:get(boss..":UserNameBot:")
-SUDO_ID = 352568466 --tonumber(redis:get(boss..":SUDO_ID:"))
+SUDO_ID = tonumber(redis:get(boss..":SUDO_ID:"))
 if not SUDO_ID then io.popen("rm -fr ./inc/Token.txt") end
 SUDO_USER = redis:hgetall(boss..'username:'..SUDO_ID).username
 version = redis:get(boss..":VERSION")
