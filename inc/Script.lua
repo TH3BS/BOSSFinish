@@ -3505,10 +3505,10 @@ local text = [[ ☑️ اهلا بك في قائمة اوامر الملفات
 
 • آوآمر آلملفآت
 
-•  /files  لعرض قائمه الملفات 
-•  /store  لعرض متجر الملفات 
-•  sp + file.lua   تثبيت الملف 
-•  dp + file.lua  الملف المراد حذفه ]]
+•  `/files`  لعرض قائمه الملفات 
+•  `/store`  لعرض متجر الملفات 
+•  `sp file.lua`   تثبيت الملف 
+•  `dp file.lua`  الملف المراد حذفه ]]
 			
 			
 GetUserID(msg.sender_user_id_,function(arg,data)
