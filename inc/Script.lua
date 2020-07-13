@@ -1218,87 +1218,86 @@ end
 
 --{ Commands For locks }
 
-if MsgText[1] == "قفل" then
+--{ Commands For locks }
 
-if MsgText[2] == "الكل"		 then return lock_All(msg) end
-if MsgText[2] == "الوسائط" 	 then return lock_Media(msg) end
-if MsgText[2] == "الصور بالتقييد" 	 then return tqeed_photo(msg) end
-if MsgText[2] == "الفيديو بالتقييد"  then return tqeed_video(msg) end
-if MsgText[2] == "المتحركه بالتقييد" then return tqeed_gif(msg) end
-if MsgText[2] == "التوجيه بالتقييد"  then return tqeed_fwd(msg) end
-if MsgText[2] == "الروابط بالتقييد"  then return tqeed_link(msg) end
-if MsgText[2] == "الدردشه"    	     then return mute_text(msg) end
-if MsgText[2] == "المتحركه" 		 then return mute_gif(msg) end
-if MsgText[2] == "الصور" 			 then return mute_photo(msg) end
-if MsgText[2] == "الفيديو"			 then return mute_video(msg) end
-if MsgText[2] == "البصمات" 		then return mute_voice(msg) 	end
-if MsgText[2] == "الصوت" 		then return mute_audio(msg) 	end
-if MsgText[2] == "الملصقات" 	then return mute_sticker(msg) end
-if MsgText[2] == "الجهات" 		then return mute_contact(msg) end
-if MsgText[2] == "التوجيه" 		then return mute_forward(msg) end
-if MsgText[2] == "الموقع"	 	then return mute_location(msg) end
-if MsgText[2] == "الملفات" 		then return mute_document(msg) end
-if MsgText[2] == "الاشعارات" 	then return mute_tgservice(msg) end
-if MsgText[2] == "الانلاين" 		then return mute_inline(msg) end
-if MsgText[2] == "الالعاب" 		then return mute_game(msg) end
-if MsgText[2] == "الكيبورد" 	then return mute_keyboard(msg) end
-if MsgText[2] == "الروابط" 		then return lock_link(msg) end
-if MsgText[2] == "التاك" 		then return lock_tag(msg) end
-if MsgText[2] == "المعرفات" 	then return lock_username(msg) end
-if MsgText[2] == "التعديل" 		then return lock_edit(msg) end
-if MsgText[2] == "الكلايش" 		then return lock_spam(msg) end
-if MsgText[2] == "التكرار" 		then return lock_flood(msg) end
-if MsgText[2] == "البوتات" 		then return lock_bots(msg) end
-if MsgText[2] == "البوتات بالطرد" 	then return lock_bots_by_kick(msg) end
-if MsgText[2] == "الماركدوان" 	then return lock_markdown(msg) end
-if MsgText[2] == "الويب" 		then return lock_webpage(msg) end 
-if MsgText[2] == "التثبيت" 		then return lock_pin(msg) end 
-if MsgText[2] == "الاضافه" 		then return lock_Add(msg) end 
-if MsgText[2] == "الانكليزيه" 		then return lock_lang(msg) end 
-if MsgText[2] == "الفارسيه" 		then return lock_pharsi(msg) end 
-if MsgText[2] == "الفشار" 		then return lock_mmno3(msg) end 
-end
+if MsgText[1] == "قفل الكل"		 then return lock_All(msg) end
+if MsgText[1] == "قفل الوسائط" 	 then return lock_Media(msg) end
+if MsgText[1] == "قفل الصور بالتقييد" 	 then return tqeed_photo(msg) end
+if MsgText[1] == "قفل الفيديو بالتقييد"  then return tqeed_video(msg) end
+if MsgText[1] == "قفل المتحركه بالتقييد" then return tqeed_gif(msg) end
+if MsgText[1] == "قفل التوجيه بالتقييد"  then return tqeed_fwd(msg) end
+if MsgText[1] == "قفل الروابط بالتقييد"  then return tqeed_link(msg) end
+if MsgText[1] == "قفل الدردشه"    	     then return mute_text(msg) end
+if MsgText[1] == "قفل المتحركه" 		 then return mute_gif(msg) end
+if MsgText[1] == "قفل الصور" 			 then return mute_photo(msg) end
+if MsgText[1] == "قفل الفيديو"			 then return mute_video(msg) end
+if MsgText[1] == "قفل البصمات" 		then return mute_voice(msg) 	end
+if MsgText[1] == "قفل الصوت" 		then return mute_audio(msg) 	end
+if MsgText[1] == "قفل الملصقات" 	then return mute_sticker(msg) end
+if MsgText[1] == "قفل الجهات" 		then return mute_contact(msg) end
+if MsgText[1] == "قفل التوجيه" 		then return mute_forward(msg) end
+if MsgText[1] == "قفل الموقع"	 	then return mute_location(msg) end
+if MsgText[1] == "قفل الملفات" 		then return mute_document(msg) end
+if MsgText[1] == "قفل الاشعارات" 	then return mute_tgservice(msg) end
+if MsgText[1] == "قفل الانلاين" 		then return mute_inline(msg) end
+if MsgText[1] == "قفل الالعاب" 		then return mute_game(msg) end
+if MsgText[1] == "قفل الكيبورد" 	then return mute_keyboard(msg) end
+if MsgText[1] == "قفل الروابط" 		then return lock_link(msg) end
+if MsgText[1] == "قفل التاك" 		then return lock_tag(msg) end
+if MsgText[1] == "قفل المعرفات" 	then return lock_username(msg) end
+if MsgText[1] == "قفل التعديل" 		then return lock_edit(msg) end
+if MsgText[1] == "قفل الكلايش" 		then return lock_spam(msg) end
+if MsgText[1] == "قفل التكرار" 		then return lock_flood(msg) end
+if MsgText[1] == "قفل البوتات" 		then return lock_bots(msg) end
+if MsgText[1] == "قفل البوتات بالطرد" 	then return lock_bots_by_kick(msg) end
+if MsgText[1] == "قفل الماركدوان" 	then return lock_markdown(msg) end
+if MsgText[1] == "قفل الويب" 		then return lock_webpage(msg) end 
+if MsgText[1] == "قفل التثبيت" 		then return lock_pin(msg) end 
+if MsgText[1] == "قفل الاضافه" 		then return lock_Add(msg) end 
+if MsgText[1] == "قفل الانكليزيه" 		then return lock_lang(msg) end 
+if MsgText[1] == "قفل الفارسيه" 		then return lock_pharsi(msg) end 
+if MsgText[1] == "قفل الفشار" 		then return lock_mmno3(msg) end 
+
 
 --{ Commands For Unlocks }
-if MsgText[1] == "فتح" 		then 
-if MsgText[2] == "الكل" then return Unlock_All(msg) end
-if MsgText[2] == "الوسائط" then return Unlock_Media(msg) end
-if MsgText[2] == "الصور بالتقييد" 		then return fktqeed_photo(msg) 	end
-if MsgText[2] == "الفيديو بالتقييد" 	then return fktqeed_video(msg) 	end
-if MsgText[2] == "المتحركه بالتقييد" 	then return fktqeed_gif(msg) 	end
-if MsgText[2] == "التوجيه بالتقييد" 	then return fktqeed_fwd(msg) 	end
-if MsgText[2] == "الروابط بالتقييد" 	then return fktqeed_link(msg) 	end
-if MsgText[2] == "المتحركه" 	then return unmute_gif(msg) 	end
-if MsgText[2] == "الدردشه" 		then return unmute_text(msg) 	end
-if MsgText[2] == "الصور" 		then return unmute_photo(msg) 	end
-if MsgText[2] == "الفيديو" 		then return unmute_video(msg) 	end
-if MsgText[2] == "البصمات" 		then return unmute_voice(msg) 	end
-if MsgText[2] == "الصوت" 		then return unmute_audio(msg) 	end
-if MsgText[2] == "الملصقات" 	then return unmute_sticker(msg) end
-if MsgText[2] == "الجهات" 		then return unmute_contact(msg) end
-if MsgText[2] == "التوجيه" 		then return unmute_forward(msg) end
-if MsgText[2] == "الموقع" 		then return unmute_location(msg) end
-if MsgText[2] == "الملفات" 		then return unmute_document(msg) end
-if MsgText[2] == "الاشعارات" 	then return unmute_tgservice(msg) end
-if MsgText[2] == "الانلاين" 		then return unmute_inline(msg) 	end
-if MsgText[2] == "الالعاب" 		then return unmute_game(msg) 	end
-if MsgText[2] == "الكيبورد" 	then return unmute_keyboard(msg) end
-if MsgText[2] == "الروابط" 		then return unlock_link(msg) 	end
-if MsgText[2] == "التاك" 		then return unlock_tag(msg) 	end
-if MsgText[2] == "المعرفات" 	then return unlock_username(msg) end
-if MsgText[2] == "التعديل" 		then return unlock_edit(msg) 	end
-if MsgText[2] == "الكلايش" 		then return unlock_spam(msg) 	end
-if MsgText[2] == "التكرار" 		then return unlock_flood(msg) 	end
-if MsgText[2] == "البوتات" 		then return unlock_bots(msg) 	end
-if MsgText[2] == "البوتات بالطرد" 	then return unlock_bots_by_kick(msg) end
-if MsgText[2] == "الماركدوان" 	then return unlock_markdown(msg) end
-if MsgText[2] == "الويب" 		then return unlock_webpage(msg) 	end
-if MsgText[2] == "التثبيت" 		then return unlock_pin(msg) end 
-if MsgText[2] == "الاضافه" 		then return unlock_Add(msg) end 
-if MsgText[2] == "الانكليزيه" 		then return unlock_lang(msg) end 
-if MsgText[2] == "الفارسيه" 		then  return unlock_pharsi(msg) end 
-if MsgText[2] == "الفشار" 		then return unlock_mmno3(msg) end 
-end
+if MsgText[1] == "فتح الكل" then return Unlock_All(msg) end
+if MsgText[1] == "فتح الوسائط" then return Unlock_Media(msg) end
+if MsgText[1] == "فتح الصور بالتقييد" 		then return fktqeed_photo(msg) 	end
+if MsgText[1] == "فتح الفيديو بالتقييد" 	then return fktqeed_video(msg) 	end
+if MsgText[1] == "فتح المتحركه بالتقييد" 	then return fktqeed_gif(msg) 	end
+if MsgText[1] == "فتح التوجيه بالتقييد" 	then return fktqeed_fwd(msg) 	end
+if MsgText[1] == "فتح الروابط بالتقييد" 	then return fktqeed_link(msg) 	end
+if MsgText[1] == "فتح المتحركه" 	then return unmute_gif(msg) 	end
+if MsgText[1] == "فتح الدردشه" 		then return unmute_text(msg) 	end
+if MsgText[1] == "فتح الصور" 		then return unmute_photo(msg) 	end
+if MsgText[1] == "فتح الفيديو" 		then return unmute_video(msg) 	end
+if MsgText[1] == "فتح البصمات" 		then return unmute_voice(msg) 	end
+if MsgText[1] == "فتح الصوت" 		then return unmute_audio(msg) 	end
+if MsgText[1] == "فتح الملصقات" 	then return unmute_sticker(msg) end
+if MsgText[1] == "فتح الجهات" 		then return unmute_contact(msg) end
+if MsgText[1] == "فتح التوجيه" 		then return unmute_forward(msg) end
+if MsgText[1] == "فتح الموقع" 		then return unmute_location(msg) end
+if MsgText[1] == "فتح الملفات" 		then return unmute_document(msg) end
+if MsgText[1] == "فتح الاشعارات" 	then return unmute_tgservice(msg) end
+if MsgText[1] == "فتح الانلاين" 		then return unmute_inline(msg) 	end
+if MsgText[1] == "فتح الالعاب" 		then return unmute_game(msg) 	end
+if MsgText[1] == "فتح الكيبورد" 	then return unmute_keyboard(msg) end
+if MsgText[1] == "فتح الروابط" 		then return unlock_link(msg) 	end
+if MsgText[1] == "فتح التاك" 		then return unlock_tag(msg) 	end
+if MsgText[1] == "فتح المعرفات" 	then return unlock_username(msg) end
+if MsgText[1] == "فتح التعديل" 		then return unlock_edit(msg) 	end
+if MsgText[1] == "فتح الكلايش" 		then return unlock_spam(msg) 	end
+if MsgText[1] == "فتح التكرار" 		then return unlock_flood(msg) 	end
+if MsgText[1] == "فتح البوتات" 		then return unlock_bots(msg) 	end
+if MsgText[1] == "فتح البوتات بالطرد" 	then return unlock_bots_by_kick(msg) end
+if MsgText[1] == "فتح الماركدوان" 	then return unlock_markdown(msg) end
+if MsgText[1] == "فتح الويب" 		then return unlock_webpage(msg) 	end
+if MsgText[1] == "فتح التثبيت" 		then return unlock_pin(msg) end 
+if MsgText[1] == "فتح الاضافه" 		then return unlock_Add(msg) end 
+if MsgText[1] == "فتح الانكليزيه" 		then return unlock_lang(msg) end 
+if MsgText[1] == "فتح الفارسيه" 		then  return unlock_pharsi(msg) end 
+if MsgText[1] == "فتح الفشار" 		then return unlock_mmno3(msg) end 
+
  
 if MsgText[1] == "ضع رابط" then
 if not msg.Director then return "📛*¦* هذا الامر يخص {المطور,المنشئ,المدير} فقط  \n🚶" end 
@@ -1990,37 +1989,87 @@ end,{chat_id_=msg.chat_id_,id_=msg.id_,TheRank=msg.TheRank})
 return false
 end
 
-if MsgText[1] == "تفعيل" then
-if MsgText[2] == "الردود" 	then return unlock_replay(msg) end
-if MsgText[2] == "الاذاعه" 	then return unlock_brod(msg) end
-if MsgText[2] == "الايدي" 	then return unlock_ID(msg) end
-if MsgText[2] == "الترحيب" 	then return unlock_Welcome(msg) end
-if MsgText[2] == "التحذير" 	then return unlock_waring(msg) end 
-if MsgText[2] == "الايدي بالصوره" 	then return unlock_idphoto(msg) end 
-if MsgText[2] == "الحمايه" 	then return unlock_AntiEdit(msg) end 
-if MsgText[2] == "المغادره" 	then return unlock_leftgroup(msg) end 
-if MsgText[2] == "تعيين الايدي" 	then return unlock_idediit(msg) end 
-if MsgText[2] == "الحظر" 	then return unlock_KickBan(msg) end 
-if MsgText[2] == "الرابط" 	then return unlock_linkk(msg) end 
-if MsgText[2] == "تاك للكل" 	then return unlock_takkl(msg) end 
-if MsgText[2] == "التحقق" 		then return unlock_check(msg) end 
-end
 
-if MsgText[1] == "تعطيل" then
-if MsgText[2] == "الردود" 	then return lock_replay(msg) end
-if MsgText[2] == "الاذاعه" 	then return lock_brod(msg) end
-if MsgText[2] == "الايدي" 	then return lock_ID(msg) end
-if MsgText[2] == "الترحيب" 	then return lock_Welcome(msg) end
-if MsgText[2] == "التحذير" 	then return lock_waring(msg) end
-if MsgText[2] == "الايدي بالصوره" 	then return lock_idphoto(msg) end
-if MsgText[2] == "الحمايه" 	then return lock_AntiEdit(msg) end
-if MsgText[2] == "المغادره" 	then return lock_leftgroup(msg) end 
-if MsgText[2] == "تعيين الايدي" 	then return lock_idediit(msg) end 
-if MsgText[2] == "الحظر" 	then return lock_KickBan(msg) end 
-if MsgText[2] == "الرابط" 	then return lock_linkk(msg) end 
-if MsgText[2] == "تاك للكل" 	then return lock_takkl(msg) end 
-if MsgText[2] == "التحقق" 		then return lock_check(msg) end 
-end
+--{ Commands For locks }
+
+if MsgText[1] == "قفل الكل"		 then return lock_All(msg) end
+if MsgText[1] == "قفل الوسائط" 	 then return lock_Media(msg) end
+if MsgText[1] == "قفل الصور بالتقييد" 	 then return tqeed_photo(msg) end
+if MsgText[1] == "قفل الفيديو بالتقييد"  then return tqeed_video(msg) end
+if MsgText[1] == "قفل المتحركه بالتقييد" then return tqeed_gif(msg) end
+if MsgText[1] == "قفل التوجيه بالتقييد"  then return tqeed_fwd(msg) end
+if MsgText[1] == "قفل الروابط بالتقييد"  then return tqeed_link(msg) end
+if MsgText[1] == "قفل الدردشه"    	     then return mute_text(msg) end
+if MsgText[1] == "قفل المتحركه" 		 then return mute_gif(msg) end
+if MsgText[1] == "قفل الصور" 			 then return mute_photo(msg) end
+if MsgText[1] == "قفل الفيديو"			 then return mute_video(msg) end
+if MsgText[1] == "قفل البصمات" 		then return mute_voice(msg) 	end
+if MsgText[1] == "قفل الصوت" 		then return mute_audio(msg) 	end
+if MsgText[1] == "قفل الملصقات" 	then return mute_sticker(msg) end
+if MsgText[1] == "قفل الجهات" 		then return mute_contact(msg) end
+if MsgText[1] == "قفل التوجيه" 		then return mute_forward(msg) end
+if MsgText[1] == "قفل الموقع"	 	then return mute_location(msg) end
+if MsgText[1] == "قفل الملفات" 		then return mute_document(msg) end
+if MsgText[1] == "قفل الاشعارات" 	then return mute_tgservice(msg) end
+if MsgText[1] == "قفل الانلاين" 		then return mute_inline(msg) end
+if MsgText[1] == "قفل الالعاب" 		then return mute_game(msg) end
+if MsgText[1] == "قفل الكيبورد" 	then return mute_keyboard(msg) end
+if MsgText[1] == "قفل الروابط" 		then return lock_link(msg) end
+if MsgText[1] == "قفل التاك" 		then return lock_tag(msg) end
+if MsgText[1] == "قفل المعرفات" 	then return lock_username(msg) end
+if MsgText[1] == "قفل التعديل" 		then return lock_edit(msg) end
+if MsgText[1] == "قفل الكلايش" 		then return lock_spam(msg) end
+if MsgText[1] == "قفل التكرار" 		then return lock_flood(msg) end
+if MsgText[1] == "قفل البوتات" 		then return lock_bots(msg) end
+if MsgText[1] == "قفل البوتات بالطرد" 	then return lock_bots_by_kick(msg) end
+if MsgText[1] == "قفل الماركدوان" 	then return lock_markdown(msg) end
+if MsgText[1] == "قفل الويب" 		then return lock_webpage(msg) end 
+if MsgText[1] == "قفل التثبيت" 		then return lock_pin(msg) end 
+if MsgText[1] == "قفل الاضافه" 		then return lock_Add(msg) end 
+if MsgText[1] == "قفل الانكليزيه" 		then return lock_lang(msg) end 
+if MsgText[1] == "قفل الفارسيه" 		then return lock_pharsi(msg) end 
+if MsgText[1] == "قفل الفشار" 		then return lock_mmno3(msg) end 
+
+
+--{ Commands For Unlocks }
+if MsgText[1] == "فتح الكل" then return Unlock_All(msg) end
+if MsgText[1] == "فتح الوسائط" then return Unlock_Media(msg) end
+if MsgText[1] == "فتح الصور بالتقييد" 		then return fktqeed_photo(msg) 	end
+if MsgText[1] == "فتح الفيديو بالتقييد" 	then return fktqeed_video(msg) 	end
+if MsgText[1] == "فتح المتحركه بالتقييد" 	then return fktqeed_gif(msg) 	end
+if MsgText[1] == "فتح التوجيه بالتقييد" 	then return fktqeed_fwd(msg) 	end
+if MsgText[1] == "فتح الروابط بالتقييد" 	then return fktqeed_link(msg) 	end
+if MsgText[1] == "فتح المتحركه" 	then return unmute_gif(msg) 	end
+if MsgText[1] == "فتح الدردشه" 		then return unmute_text(msg) 	end
+if MsgText[1] == "فتح الصور" 		then return unmute_photo(msg) 	end
+if MsgText[1] == "فتح الفيديو" 		then return unmute_video(msg) 	end
+if MsgText[1] == "فتح البصمات" 		then return unmute_voice(msg) 	end
+if MsgText[1] == "فتح الصوت" 		then return unmute_audio(msg) 	end
+if MsgText[1] == "فتح الملصقات" 	then return unmute_sticker(msg) end
+if MsgText[1] == "فتح الجهات" 		then return unmute_contact(msg) end
+if MsgText[1] == "فتح التوجيه" 		then return unmute_forward(msg) end
+if MsgText[1] == "فتح الموقع" 		then return unmute_location(msg) end
+if MsgText[1] == "فتح الملفات" 		then return unmute_document(msg) end
+if MsgText[1] == "فتح الاشعارات" 	then return unmute_tgservice(msg) end
+if MsgText[1] == "فتح الانلاين" 		then return unmute_inline(msg) 	end
+if MsgText[1] == "فتح الالعاب" 		then return unmute_game(msg) 	end
+if MsgText[1] == "فتح الكيبورد" 	then return unmute_keyboard(msg) end
+if MsgText[1] == "فتح الروابط" 		then return unlock_link(msg) 	end
+if MsgText[1] == "فتح التاك" 		then return unlock_tag(msg) 	end
+if MsgText[1] == "فتح المعرفات" 	then return unlock_username(msg) end
+if MsgText[1] == "فتح التعديل" 		then return unlock_edit(msg) 	end
+if MsgText[1] == "فتح الكلايش" 		then return unlock_spam(msg) 	end
+if MsgText[1] == "فتح التكرار" 		then return unlock_flood(msg) 	end
+if MsgText[1] == "فتح البوتات" 		then return unlock_bots(msg) 	end
+if MsgText[1] == "فتح البوتات بالطرد" 	then return unlock_bots_by_kick(msg) end
+if MsgText[1] == "فتح الماركدوان" 	then return unlock_markdown(msg) end
+if MsgText[1] == "فتح الويب" 		then return unlock_webpage(msg) 	end
+if MsgText[1] == "فتح التثبيت" 		then return unlock_pin(msg) end 
+if MsgText[1] == "فتح الاضافه" 		then return unlock_Add(msg) end 
+if MsgText[1] == "فتح الانكليزيه" 		then return unlock_lang(msg) end 
+if MsgText[1] == "فتح الفارسيه" 		then  return unlock_pharsi(msg) end 
+if MsgText[1] == "فتح الفشار" 		then return unlock_mmno3(msg) end 
+
 
 if MsgText[1] == "ضع الترحيب" then 
 if not msg.Admin then return "📛*¦* هذا الامر يخص {الادمن,المدير,المنشئ,المطور} فقط  \n🚶" end
@@ -2189,6 +2238,8 @@ if MsgText[1] == 'تعيين كليشه الايدي' or MsgText[1] == 'تعيي
   end
 
 
+
+	
 if MsgText[1] == "تنزيل الكل" then
   if not msg.Admin then return "📛*¦* هذا الامر يخص {الادمن,المدير,المنشئ,المطور} فقط  \n🚶" end
 
@@ -2202,6 +2253,8 @@ if MsgText[1] == "تنزيل الكل" then
     NameUser = Hyper_Link_Name(data)
     msg = arg.msg
     UserID = msg.UserID
+    if UserID == our_id then return sendMsg(msg.chat_id_,msg.id_,"📛*¦* لآ يمكنك تنفيذ الامر مع البوت\n❕") end
+
       if UserID == SUDO_ID then 
       rinkuser = 1
       elseif redis:sismember(boss..':SUDO_BOT:',UserID) then 
@@ -2296,6 +2349,7 @@ huk = false
     GetUserName(MsgText[2],function(arg,data)
     if not data.id_ then return sendMsg(arg.ChatID,arg.MsgID,"📛*¦* لآ يوجد عضـو بهہ‌‏ذآ آلمـعرف \n❕") end 
     local UserID = data.id_
+    if UserID == our_id then return sendMsg(arg.ChatID,arg.MsgID,"📛*¦* لآ يمكنك تنفيذ الامر مع البوت\n❕") end
     msg = arg.msg
     NameUser = Hyper_Link_Name(data)
 
@@ -5463,6 +5517,7 @@ end
 end 
 
 
+
 return {
 Boss = {
 "^(رفع القيود)$",
@@ -5512,10 +5567,6 @@ Boss = {
 '^(تنزيل المدير) (@[%a%d_]+)$',
 '^(تنزيل المدير) (%d+)$',
 '^(تنزيل مدير) (%d+)$',
-'^(قفل) (.+)$',
-'^(فتح) (.+)$',
-'^(تفعيل) (.+)$',
-'^(تعطيل) (.+)$',
 '^(ضع تكرار) (%d+)$',
 "^(مسح)$",
 "^(مسح) (.+)$",
@@ -5621,11 +5672,8 @@ Boss = {
 "^(الغاء كتم)$",
 "^(رفع مطور)$",
 "^(تنزيل مطور)$",
-
-
 "^(رفع منشئ اساسي)$",
 "^(تنزيل منشئ اساسي)$",
-
 "^(رفع منشى اساسي)$",
 "^(تنزيل منشى اساسي)$",
 "^(تعيين قائمه الاوامر)$",
@@ -5753,7 +5801,6 @@ Boss = {
 "^(مسح الايدي عام)$", 
 "^(مسح ايدي عام)$", 
 "^(مسح كليشة الايدي عام)$", 
-
 "^(السورس)$",
 "^(سورس)$",
 "^(م المطور)$", 
@@ -5763,10 +5810,106 @@ Boss = {
 "^(م1)$",
 "^(م2)$",
 "^(م3)$", 
- 
 "^(/store)$", 
 "^(/files)$", 
+"^(قفل الصور بالتقييد)$",
+"^(قفل الفيديو بالتقييد)$",
+"^(قفل المتحركه بالتقييد )$",
+"^(قفل التوجيه بالتقييد )$",
+"^(قفل الروابط بالتقييد )$",
+"^(قفل الدردشه)$",
+"^(قفل المتحركه)$",
+"^(قفل الصور)$",
+"^(قفل الفيديو)$",
+"^(قفل البصمات)$",
+"^(قفل الصوت)$",
+"^(قفل الملصقات)$",
+"^(قفل الجهات)$",
+"^(قفل التوجيه)$",
+"^(قفل الموقع)$",
+"^(قفل الملفات)$",
+"^(قفل الاشعارات)$",
+"^(قفل الانلاين)$",
+"^(قفل الالعاب)$",
+"^(قفل الكيبورد)$",
+"^(قفل الروابط)$",
+"^(قفل التاك)$",
+"^(قفل المعرفات)$",
+"^(قفل التعديل)$",
+"^(قفل الكلايش)$",
+"^(قفل التكرار)$",
+"^(قفل البوتات)$",
+"^(قفل البوتات بالطرد)$",
+"^(قفل الماركدوان)$",
+"^(قفل الويب)$",
+"^(قفل التثبيت)$",
+"^(قفل الاضافه)$",
+"^(قفل الانكليزيه)$",
+"^(قفل الفارسيه)$",
+"^(قفل الفشار)$",
+"^(فتح الصور بالتقييد)$",
+"^(فتح الفيديو بالتقييد)$",
+"^(فتح المتحركه بالتقييد )$",
+"^(فتح التوجيه بالتقييد )$",
+"^(فتح الروابط بالتقييد )$",
+"^(فتح الدردشه)$",
+"^(فتح المتحركه)$",
+"^(فتح الصور)$",
+"^(فتح الفيديو)$",
+"^(فتح البصمات)$",
+"^(فتح الصوت)$",
+"^(فتح الملصقات)$",
+"^(فتح الجهات)$",
+"^(فتح التوجيه)$",
+"^(فتح الموقع)$",
+"^(فتح الملفات)$",
+"^(فتح الاشعارات)$",
+"^(فتح الانلاين)$",
+"^(فتح الالعاب)$",
+"^(فتح الكيبورد)$",
+"^(فتح الروابط)$",
+"^(فتح التاك)$",
+"^(فتح المعرفات)$",
+"^(فتح التعديل)$",
+"^(فتح الكلايش)$",
+"^(فتح التكرار)$",
+"^(فتح البوتات)$",
+"^(فتح البوتات بالطرد)$",
+"^(فتح الماركدوان)$",
+"^(فتح الويب)$",
+"^(فتح التثبيت)$",
+"^(فتح الاضافه)$",
+"^(فتح الانكليزيه)$",
+"^(فتح الفارسيه)$",
+"^(فتح الفشار)$",
+"^(تعطيل الردود)$",
+"^(تعطيل الاذاعه)$",
+"^(تعطيل الايدي)$",
+"^(تعطيل الترحيب)$",
+"^(تعطيل التحذير)$",
+"^(تعطيل الايدي بالصوره)$",
+"^(تعطيل الحمايه)$",
+"^(تعطيل المغادره)$",
+"^(تعطيل تعيين الايدي)$",
+"^(تعطيل الحظر)$",
+"^(تعطيل الرابط)$",
+"^(تعطيل تاك للكل)$",
+"^(تعطيل التحقق)$",
+"^(تفعيل الردود)$",
+"^(تفعيل الاذاعه)$",
+"^(تفعيل الايدي)$",
+"^(تفعيل الترحيب)$",
+"^(تفعيل التحذير)$",
+"^(تفعيل الايدي بالصوره)$",
+"^(تفعيل الحمايه)$",
+"^(تفعيل المغادره)$",
+"^(تفعيل تعيين الايدي)$",
+"^(تفعيل الحظر)$",
+"^(تفعيل الرابط)$",
+"^(تفعيل تاك للكل)$",
+"^(تفعيل التحقق)$",
  },
  iBoss = iBoss,
  dBoss = dBoss,
  }
+
