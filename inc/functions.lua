@@ -1976,6 +1976,8 @@ end
 --========================================================================
 if cmd == "DwnAll" then ----------- تنزيل الكل
   print(UserID..":"..SUDO_ID)
+if UserID == our_id then return sendMsg(ChatID,MsgID,"📛*¦* لآ يمكنك تنفيذ الامر مع البوت\n❕") end
+
   if UserID == SUDO_ID then 
   rinkuser = 1
   elseif redis:sismember(boss..':SUDO_BOT:',UserID) then 
