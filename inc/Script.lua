@@ -1218,8 +1218,6 @@ end
 
 --{ Commands For locks }
 
---{ Commands For locks }
-
 if MsgText[1] == "قفل الكل"		 then return lock_All(msg) end
 if MsgText[1] == "قفل الوسائط" 	 then return lock_Media(msg) end
 if MsgText[1] == "قفل الصور بالتقييد" 	 then return tqeed_photo(msg) end
@@ -1989,86 +1987,34 @@ end,{chat_id_=msg.chat_id_,id_=msg.id_,TheRank=msg.TheRank})
 return false
 end
 
-
---{ Commands For locks }
-
-if MsgText[1] == "قفل الكل"		 then return lock_All(msg) end
-if MsgText[1] == "قفل الوسائط" 	 then return lock_Media(msg) end
-if MsgText[1] == "قفل الصور بالتقييد" 	 then return tqeed_photo(msg) end
-if MsgText[1] == "قفل الفيديو بالتقييد"  then return tqeed_video(msg) end
-if MsgText[1] == "قفل المتحركه بالتقييد" then return tqeed_gif(msg) end
-if MsgText[1] == "قفل التوجيه بالتقييد"  then return tqeed_fwd(msg) end
-if MsgText[1] == "قفل الروابط بالتقييد"  then return tqeed_link(msg) end
-if MsgText[1] == "قفل الدردشه"    	     then return mute_text(msg) end
-if MsgText[1] == "قفل المتحركه" 		 then return mute_gif(msg) end
-if MsgText[1] == "قفل الصور" 			 then return mute_photo(msg) end
-if MsgText[1] == "قفل الفيديو"			 then return mute_video(msg) end
-if MsgText[1] == "قفل البصمات" 		then return mute_voice(msg) 	end
-if MsgText[1] == "قفل الصوت" 		then return mute_audio(msg) 	end
-if MsgText[1] == "قفل الملصقات" 	then return mute_sticker(msg) end
-if MsgText[1] == "قفل الجهات" 		then return mute_contact(msg) end
-if MsgText[1] == "قفل التوجيه" 		then return mute_forward(msg) end
-if MsgText[1] == "قفل الموقع"	 	then return mute_location(msg) end
-if MsgText[1] == "قفل الملفات" 		then return mute_document(msg) end
-if MsgText[1] == "قفل الاشعارات" 	then return mute_tgservice(msg) end
-if MsgText[1] == "قفل الانلاين" 		then return mute_inline(msg) end
-if MsgText[1] == "قفل الالعاب" 		then return mute_game(msg) end
-if MsgText[1] == "قفل الكيبورد" 	then return mute_keyboard(msg) end
-if MsgText[1] == "قفل الروابط" 		then return lock_link(msg) end
-if MsgText[1] == "قفل التاك" 		then return lock_tag(msg) end
-if MsgText[1] == "قفل المعرفات" 	then return lock_username(msg) end
-if MsgText[1] == "قفل التعديل" 		then return lock_edit(msg) end
-if MsgText[1] == "قفل الكلايش" 		then return lock_spam(msg) end
-if MsgText[1] == "قفل التكرار" 		then return lock_flood(msg) end
-if MsgText[1] == "قفل البوتات" 		then return lock_bots(msg) end
-if MsgText[1] == "قفل البوتات بالطرد" 	then return lock_bots_by_kick(msg) end
-if MsgText[1] == "قفل الماركدوان" 	then return lock_markdown(msg) end
-if MsgText[1] == "قفل الويب" 		then return lock_webpage(msg) end 
-if MsgText[1] == "قفل التثبيت" 		then return lock_pin(msg) end 
-if MsgText[1] == "قفل الاضافه" 		then return lock_Add(msg) end 
-if MsgText[1] == "قفل الانكليزيه" 		then return lock_lang(msg) end 
-if MsgText[1] == "قفل الفارسيه" 		then return lock_pharsi(msg) end 
-if MsgText[1] == "قفل الفشار" 		then return lock_mmno3(msg) end 
+if MsgText[1] == "تفعيل الردود" 	then return unlock_replay(msg) end
+if MsgText[1] == "تفعيل الاذاعه" 	then return unlock_brod(msg) end
+if MsgText[1] == "تفعيل الايدي" 	then return unlock_ID(msg) end
+if MsgText[1] == "تفعيل الترحيب" 	then return unlock_Welcome(msg) end
+if MsgText[1] == "تفعيل التحذير" 	then return unlock_waring(msg) end 
+if MsgText[1] == "تفعيل الايدي بالصوره" 	then return unlock_idphoto(msg) end 
+if MsgText[1] == "تفعيل الحمايه" 	then return unlock_AntiEdit(msg) end 
+if MsgText[1] == "تفعيل المغادره" 	then return unlock_leftgroup(msg) end 
+if MsgText[1] == "تفعيل تعيين الايدي" 	then return unlock_idediit(msg) end 
+if MsgText[1] == "تفعيل الحظر" 	then return unlock_KickBan(msg) end 
+if MsgText[1] == "تفعيل الرابط" 	then return unlock_linkk(msg) end 
+if MsgText[1] == "تفعيل تاك للكل" 	then return unlock_takkl(msg) end 
+if MsgText[1] == "تفعيل التحقق" 		then return unlock_check(msg) end 
 
 
---{ Commands For Unlocks }
-if MsgText[1] == "فتح الكل" then return Unlock_All(msg) end
-if MsgText[1] == "فتح الوسائط" then return Unlock_Media(msg) end
-if MsgText[1] == "فتح الصور بالتقييد" 		then return fktqeed_photo(msg) 	end
-if MsgText[1] == "فتح الفيديو بالتقييد" 	then return fktqeed_video(msg) 	end
-if MsgText[1] == "فتح المتحركه بالتقييد" 	then return fktqeed_gif(msg) 	end
-if MsgText[1] == "فتح التوجيه بالتقييد" 	then return fktqeed_fwd(msg) 	end
-if MsgText[1] == "فتح الروابط بالتقييد" 	then return fktqeed_link(msg) 	end
-if MsgText[1] == "فتح المتحركه" 	then return unmute_gif(msg) 	end
-if MsgText[1] == "فتح الدردشه" 		then return unmute_text(msg) 	end
-if MsgText[1] == "فتح الصور" 		then return unmute_photo(msg) 	end
-if MsgText[1] == "فتح الفيديو" 		then return unmute_video(msg) 	end
-if MsgText[1] == "فتح البصمات" 		then return unmute_voice(msg) 	end
-if MsgText[1] == "فتح الصوت" 		then return unmute_audio(msg) 	end
-if MsgText[1] == "فتح الملصقات" 	then return unmute_sticker(msg) end
-if MsgText[1] == "فتح الجهات" 		then return unmute_contact(msg) end
-if MsgText[1] == "فتح التوجيه" 		then return unmute_forward(msg) end
-if MsgText[1] == "فتح الموقع" 		then return unmute_location(msg) end
-if MsgText[1] == "فتح الملفات" 		then return unmute_document(msg) end
-if MsgText[1] == "فتح الاشعارات" 	then return unmute_tgservice(msg) end
-if MsgText[1] == "فتح الانلاين" 		then return unmute_inline(msg) 	end
-if MsgText[1] == "فتح الالعاب" 		then return unmute_game(msg) 	end
-if MsgText[1] == "فتح الكيبورد" 	then return unmute_keyboard(msg) end
-if MsgText[1] == "فتح الروابط" 		then return unlock_link(msg) 	end
-if MsgText[1] == "فتح التاك" 		then return unlock_tag(msg) 	end
-if MsgText[1] == "فتح المعرفات" 	then return unlock_username(msg) end
-if MsgText[1] == "فتح التعديل" 		then return unlock_edit(msg) 	end
-if MsgText[1] == "فتح الكلايش" 		then return unlock_spam(msg) 	end
-if MsgText[1] == "فتح التكرار" 		then return unlock_flood(msg) 	end
-if MsgText[1] == "فتح البوتات" 		then return unlock_bots(msg) 	end
-if MsgText[1] == "فتح البوتات بالطرد" 	then return unlock_bots_by_kick(msg) end
-if MsgText[1] == "فتح الماركدوان" 	then return unlock_markdown(msg) end
-if MsgText[1] == "فتح الويب" 		then return unlock_webpage(msg) 	end
-if MsgText[1] == "فتح التثبيت" 		then return unlock_pin(msg) end 
-if MsgText[1] == "فتح الاضافه" 		then return unlock_Add(msg) end 
-if MsgText[1] == "فتح الانكليزيه" 		then return unlock_lang(msg) end 
-if MsgText[1] == "فتح الفارسيه" 		then  return unlock_pharsi(msg) end 
-if MsgText[1] == "فتح الفشار" 		then return unlock_mmno3(msg) end 
+if MsgText[1] == "تعطيل الردود" 	then return lock_replay(msg) end
+if MsgText[1] == "تعطيل الاذاعه" 	then return lock_brod(msg) end
+if MsgText[1] == "تعطيل الايدي" 	then return lock_ID(msg) end
+if MsgText[1] == "تعطيل الترحيب" 	then return lock_Welcome(msg) end
+if MsgText[1] == "تعطيل التحذير" 	then return lock_waring(msg) end
+if MsgText[1] == "تعطيل الايدي بالصوره" 	then return lock_idphoto(msg) end
+if MsgText[1] == "تعطيل الحمايه" 	then return lock_AntiEdit(msg) end
+if MsgText[1] == "تعطيل المغادره" 	then return lock_leftgroup(msg) end 
+if MsgText[1] == "تعطيل تعيين الايدي" 	then return lock_idediit(msg) end 
+if MsgText[1] == "تعطيل الحظر" 	then return lock_KickBan(msg) end 
+if MsgText[1] == "تعطيل الرابط" 	then return lock_linkk(msg) end 
+if MsgText[1] == "تعطيل تاك للكل" 	then return lock_takkl(msg) end 
+if MsgText[1] == "تعطيل التحقق" 		then return lock_check(msg) end 
 
 
 if MsgText[1] == "ضع الترحيب" then 
@@ -2238,8 +2184,6 @@ if MsgText[1] == 'تعيين كليشه الايدي' or MsgText[1] == 'تعيي
   end
 
 
-
-	
 if MsgText[1] == "تنزيل الكل" then
   if not msg.Admin then return "📛*¦* هذا الامر يخص {الادمن,المدير,المنشئ,المطور} فقط  \n🚶" end
 
@@ -3268,315 +3212,317 @@ if msg.type == 'channel' and msg.GroupActive then
   end
 
 
-if MsgText[1] == "الاوامر" then
-if not msg.Admin then return "📛*¦* هذا الامر يخص {الادمن,المدير,المنشئ,المطور} فقط  \n🚶" end
-SUDO_USER = redis:hgetall(boss..'username:'..SUDO_ID).username
-text = [[☑️ اهلا بك في اوامر البوت 👇
-📨 للاستفسار - ]]..SUDO_USER..[[
 
-• م1 - لعرض اوامر الاداره
-• م2 - لعرض اوامر اعدادات المجموعه
-• م3 - لعرض اوامر الحماية
-• م المطور - لعرض اوامر المطور
-• اوامر الرد - لاضافه رد معين
-• اوامر الملفات - للتحكم في ملفات البوت]]
-GetUserID(msg.sender_user_id_,function(arg,data)
-msg = arg.msg
-local textD = redis:get(boss..":awamer_Klesha_m:")
-if textD then
-textD = Flter_Markdown(convert_Klmat(msg,data,textD,true))
-else
-  textD = text
-end
-sendMsg(msg.chat_id_,msg.id_,textD)
-end,{msg=msg})
-return false
-end
-
-if MsgText[1]== 'م1' then
-if not msg.Admin then return "📛*¦* هذا الامر يخص {الادمن,المدير,المنشئ,المطور} فقط  \n🚶" end
-SUDO_USER = redis:hgetall(boss..'username:'..SUDO_ID).username
-local text = [[☑️ اهلا بك في قائمة اوامر الاداريين
-📨 للاستفسار - ]]..SUDO_USER..[[
-
-﹎﹎﹎﹎﹎اوامر الرفع والتنزيل﹎﹎﹎﹎﹎
-• رفع - تنزيل منشى اساسي
-• رفع - تنزيل مشرف
-• رفع - تنزيل منشى
-• رفع - تنزيل مدير
-• رفع - تنزيل ادمن
-• رفع - تنزيل مميز
-• تنزيل الكل - لأزاله جميع الرتب أعلاه
-
-﹎﹎﹎﹎﹎اوامر المسح﹎﹎﹎﹎﹎
-• مسح المنشئين الاساسيين
-• مسح المنشئين
-• مسح المدراء
-• مسح الادمنيه
-• مسح المميزين
-• مسح المحظورين
-• مسح المكتومين
-• مسح قائمه العام
-• مسح قائمه المنع
-• مسح الردود العامه
-• مسح الردود
-• مسح الاوامر
-• مسح + عدد
-• مسح بالرد
-• مسح ايدي عام
-• مسح كليشه الايدي
-• مسح كليشه الستارت
-• مسح الترحيب
-• مسح الرابط
-• مسح كلايش التعليمات
-
-﹎﹎﹎﹎﹎اوامر الطرد الحظر الكتم﹎﹎﹎﹎﹎
-• حظر - بالرد،بالمعرف،بالايدي
-• طرد - بالرد،بالمعرف،بالايدي 
-• كتم - بالرد،بالمعرف،بالايدي
-• تقيد - بالرد،بالمعرف،بالايدي
-• الغاء الحظر - بالرد،بالمعرف،بالايدي
-• الغاء الكتم - بالرد،بالمعرف،بالايدي
-• فك التقييد - بالرد،بالمعرف،بالايدي
-• رفع القيود - لحذف ↜ كتم،حظر،حظر عام،تقييد
-• منع + الكلمه
-• الغاء منع + الكلمه
-• طرد البوتات
-• طرد المحذوفين
-• كشف البوتات]]
-
-GetUserID(msg.sender_user_id_,function(arg,data)
-  msg = arg.msg
-  local textD = redis:get(boss..":awamer_Klesha_m1:")
-  if textD then
+  if MsgText[1] == "الاوامر" then
+    if not msg.Admin then return "📛*¦* هذا الامر يخص {الادمن,المدير,المنشئ,المطور} فقط  \n🚶" end
+    SUDO_USER = redis:hgetall(boss..'username:'..SUDO_ID).username
+    text = [[☑️ اهلا بك في اوامر البوت 👇
+    📨 للاستفسار - ]]..SUDO_USER..[[
+    
+    • م1 - لعرض اوامر الاداره
+    • م2 - لعرض اوامر اعدادات المجموعه
+    • م3 - لعرض اوامر الحماية
+    • م المطور - لعرض اوامر المطور
+    • اوامر الرد - لاضافه رد معين
+    • اوامر الملفات - للتحكم في ملفات البوت]]
+    GetUserID(msg.sender_user_id_,function(arg,data)
+    msg = arg.msg
+    local textD = redis:get(boss..":awamer_Klesha_m:")
+    if textD then
     textD = Flter_Markdown(convert_Klmat(msg,data,textD,true))
     else
       textD = text
     end
-      sendMsg(msg.chat_id_,msg.id_,textD)
-  end,{msg=msg})
-  return false
-end
-
-
-if MsgText[1]== 'م2' then
-if not msg.Admin then return "📛*¦* هذا الامر يخص {الادمن,المدير,المنشئ,المطور} فقط  \n🚶" end
-SUDO_USER = redis:hgetall(boss..'username:'..SUDO_ID).username
-
-local text = [[☑️ اهلا بك في قائمة اوامر المجموعه
- 📨 للاستفسار - ]]..SUDO_USER..[[
-
-﹎﹎﹎﹎اوامر الوضع ﹎﹎﹎﹎
-• ضع الترحيب
-• ضع القوانين
-• ضع وصف
-• ضـع رابط
-• اضف امر
-• اضف رد عام
-• تعيين ايدي عام
-• تعيين كليشه الايدي
-
-﹎﹎﹎﹎اوامر رؤية الاعدادات﹎﹎﹎﹎
-• المطورين
-• المنشئين الاساسيين
-• المنشئين 
-• الادمنيه
-• المدراء
-• المميزين
-• المحظورين
-• القوانين
-• المكتومين
-• المطور 
-• معلوماتي 
-• الحمايه  
-• الوسائط
-• الاعدادت
-• المجموعه ]]
-			
-GetUserID(msg.sender_user_id_,function(arg,data)
-  msg = arg.msg
-  local textD = redis:get(boss..":awamer_Klesha_m2:")
-  if textD then
-    textD = Flter_Markdown(convert_Klmat(msg,data,textD,true))
-    else
-      textD = text
+    sendMsg(msg.chat_id_,msg.id_,textD)
+    end,{msg=msg})
+    return false
     end
-      sendMsg(msg.chat_id_,msg.id_,textD)
-  end,{msg=msg})
-  return false
-end
-
-if MsgText[1]== 'م3' then
-if not msg.Admin then return "📛*¦* هذا الامر يخص {الادمن,المدير,المنشئ,المطور} فقط  \n🚶" end
-SUDO_USER = redis:hgetall(boss..'username:'..SUDO_ID).username
-
-local text = [[ ☑️ اهلا بك في قائمة الحماية
-📨 للاستفسار - ]]..SUDO_USER..[[
-
-﹎﹎﹎ اوامر القفل والفتح بالمسح ﹎﹎﹎
-• قفل - فتح التعديل  
-•️ قفل - فتح البصمات 
-• قفل - فتح الفيديو 
-• قفل - فتح الـصــور 
-• قفل - فتح الملصقات 
-• قفل - فتح المتحركه 
-
-• قفل - فتح الدردشه 
-• قفل - فتح الروابط 
-• قفل - فتح التاك 
-• قفل - فتح البوتات 
-• ️قفل - فتح المعرفات 
-• قفل - فتح البوتات بالطرد 
-
-• قفل - فتح الكلايش 
-•️ قفل - فتح التكرار 
-• قفل - فتح التوجيه 
-• قفل - فتح الانلاين 
-• قفل - فتح الجهات 
-• قفل - فتح الــكـــل 
-
-• قفل - فتح الفشار
-• قفل - فتح الفارسيه
-• قفل - فتح الانكليزيه
-• قفل - فتح الاضافه
-• قفل - فتح الصوت
-• قفل - فتح الالعاب
-• قفل - فتح الماركدوان
-• قفل - فتح الويب
-
-﹎﹎﹎﹎اوامر الفتح والقفل بالتقييد﹎﹎﹎
-• قفل - فتح التوجيه بالتقييد 
-• قفل - فتح الروابط بالتقييد 
-• قفل - فتح المتحركه بالتقييد 
-• قفل - فتح الصور بالتقييد 
-• قفل - فتح الفيديو بالتقييد 
-
-﹎﹎﹎﹎اوامر التفعيل والتعطيل ﹎﹎﹎﹎
-• تفعيل - تعطيل الترحيب 
-• تفعيل - تعطيل الردود 
-• تفعيل - تعطيل التحذير 
-• تفعيل - تعطيل الايدي
-• تفعيل - تعطيل الرابط
-• تفعيل - تعطيل المغادره
-• تفعيل - تعطيل الحظر
-• تفعيل - تعطيل الحمايه
-• تفعيل - تعطيل تاك للكل
-• تفعيل - تعطيل الايدي بالصوره
-• تفعيل - تعطيل التحقق ]]
-			
-			
-GetUserID(msg.sender_user_id_,function(arg,data)
-  msg = arg.msg
-  local textD = redis:get(boss..":awamer_Klesha_m3:")
-  if textD then
-    textD = Flter_Markdown(convert_Klmat(msg,data,textD,true))
-    else
-      textD = text
+    
+    if MsgText[1]== 'م1' then
+    if not msg.Admin then return "📛*¦* هذا الامر يخص {الادمن,المدير,المنشئ,المطور} فقط  \n🚶" end
+    SUDO_USER = redis:hgetall(boss..'username:'..SUDO_ID).username
+    local text = [[☑️ اهلا بك في قائمة اوامر الاداريين
+    📨 للاستفسار - ]]..SUDO_USER..[[
+    
+    ﹎﹎﹎﹎﹎اوامر الرفع والتنزيل﹎﹎﹎﹎﹎
+    • رفع - تنزيل منشى اساسي
+    • رفع - تنزيل مشرف
+    • رفع - تنزيل منشى
+    • رفع - تنزيل مدير
+    • رفع - تنزيل ادمن
+    • رفع - تنزيل مميز
+    • تنزيل الكل - لأزاله جميع الرتب أعلاه
+    
+    ﹎﹎﹎﹎﹎اوامر المسح﹎﹎﹎﹎﹎
+    • مسح المنشئين الاساسيين
+    • مسح المنشئين
+    • مسح المدراء
+    • مسح الادمنيه
+    • مسح المميزين
+    • مسح المحظورين
+    • مسح المكتومين
+    • مسح قائمه العام
+    • مسح قائمه المنع
+    • مسح الردود العامه
+    • مسح الردود
+    • مسح الاوامر
+    • مسح + عدد
+    • مسح بالرد
+    • مسح ايدي عام
+    • مسح كليشه الايدي
+    • مسح كليشه الستارت
+    • مسح الترحيب
+    • مسح الرابط
+    • مسح كلايش التعليمات
+    
+    ﹎﹎﹎﹎﹎اوامر الطرد الحظر الكتم﹎﹎﹎﹎﹎
+    • حظر - بالرد،بالمعرف،بالايدي
+    • طرد - بالرد،بالمعرف،بالايدي 
+    • كتم - بالرد،بالمعرف،بالايدي
+    • تقيد - بالرد،بالمعرف،بالايدي
+    • الغاء الحظر - بالرد،بالمعرف،بالايدي
+    • الغاء الكتم - بالرد،بالمعرف،بالايدي
+    • فك التقييد - بالرد،بالمعرف،بالايدي
+    • رفع القيود - لحذف ↜ كتم،حظر،حظر عام،تقييد
+    • منع + الكلمه
+    • الغاء منع + الكلمه
+    • طرد البوتات
+    • طرد المحذوفين
+    • كشف البوتات]]
+    
+    GetUserID(msg.sender_user_id_,function(arg,data)
+      msg = arg.msg
+      local textD = redis:get(boss..":awamer_Klesha_m1:")
+      if textD then
+        textD = Flter_Markdown(convert_Klmat(msg,data,textD,true))
+        else
+          textD = text
+        end
+          sendMsg(msg.chat_id_,msg.id_,textD)
+      end,{msg=msg})
+      return false
     end
-      sendMsg(msg.chat_id_,msg.id_,textD)
-  end,{msg=msg})
-  return false
-end
-
-if MsgText[1]== "م المطور" then
-if not msg.SudoBase then return "🔅¦ للمطور الاساسي فقط  🎖" end
-SUDO_USER = redis:hgetall(boss..'username:'..SUDO_ID).username
-
-local text = [[ ☑️ اهلا بك في قائمة اوامر المطورين
- 📨 للاستفسار - ]]..SUDO_USER..[[
-
-• تفعيل
-• تعطيل
-• اسم بوتك + غادر
-• مسح الادمنيه
-• مسح المميزين
-• مسح المدراء
-• مسح المطورين
- • مسح المنشئين
- • مسح المنشئين الاساسيين
-• مسح كلايش التعليمات
-• اذاعه
-• اذاعه خاص
-• اذاعه عام
-• اذاعه بالتثبيت
-• اذاعه عام بالتوجيه
-• تعيين قائمه الاوامر
-• مسح كلايش التعليمات
-• تعيين كليشه ستارت
-• تعيين ايدي عام
-• مسح ايدي عام
-• تفعيل / تعطيل تعيين الايدي
-• تحديث
-• تحديث السورس ]]
-			
-GetUserID(msg.sender_user_id_,function(arg,data)
-  msg = arg.msg
-  local textD = redis:get(boss..":awamer_Klesha_mtwr:")
-  if textD then
-    textD = Flter_Markdown(convert_Klmat(msg,data,textD,true))
-    else
-      textD = text
+    
+    
+    if MsgText[1]== 'م2' then
+    if not msg.Admin then return "📛*¦* هذا الامر يخص {الادمن,المدير,المنشئ,المطور} فقط  \n🚶" end
+    SUDO_USER = redis:hgetall(boss..'username:'..SUDO_ID).username
+    
+    local text = [[☑️ اهلا بك في قائمة اوامر المجموعه
+     📨 للاستفسار - ]]..SUDO_USER..[[
+    
+    ﹎﹎﹎﹎اوامر الوضع ﹎﹎﹎﹎
+    • ضع الترحيب
+    • ضع القوانين
+    • ضع وصف
+    • ضـع رابط
+    • اضف امر
+    • اضف رد عام
+    • تعيين ايدي عام
+    • تعيين كليشه الايدي
+    
+    ﹎﹎﹎﹎اوامر رؤية الاعدادات﹎﹎﹎﹎
+    • المطورين
+    • المنشئين الاساسيين
+    • المنشئين 
+    • الادمنيه
+    • المدراء
+    • المميزين
+    • المحظورين
+    • القوانين
+    • المكتومين
+    • المطور 
+    • معلوماتي 
+    • الحمايه  
+    • الوسائط
+    • الاعدادت
+    • المجموعه ]]
+          
+    GetUserID(msg.sender_user_id_,function(arg,data)
+      msg = arg.msg
+      local textD = redis:get(boss..":awamer_Klesha_m2:")
+      if textD then
+        textD = Flter_Markdown(convert_Klmat(msg,data,textD,true))
+        else
+          textD = text
+        end
+          sendMsg(msg.chat_id_,msg.id_,textD)
+      end,{msg=msg})
+      return false
     end
-      sendMsg(msg.chat_id_,msg.id_,textD)
-  end,{msg=msg})
-  return false
-end
-
-if MsgText[1]== 'اوامر الرد' then
-if not msg.Director then return "📛*¦* هذا الامر يخص {المطور,المنشئ,المدير} فقط  \n🚶" end
-SUDO_USER = redis:hgetall(boss..'username:'..SUDO_ID).username
-
-			
-local text = [[ ☑️ اهلا بك في قائمة اوامر الردود
- 📨 للاستفسار - ]]..SUDO_USER..[[
-
-•  جميع اوامر الردود 
-• الردود : لعرض الردود المثبته
-•  اضف رد : لأضافه رد جديد
-• مسح رد  الرد المراد مسحه
-• مسح الردود : لمسح كل الردود
-•  اضف رد عام : لاضافه رد لكل المجموعات
-•  مسح رد عام : لمسح الرد العام 
-• مسح الردود العامه : لمسح كل ردود العامه ]]
-			
-GetUserID(msg.sender_user_id_,function(arg,data)
-  msg = arg.msg
-  local textD = redis:get(boss..":awamer_Klesha_mrd:")
-  if textD then
-    textD = Flter_Markdown(convert_Klmat(msg,data,textD,true))
-    else
-      textD = text
+    
+    if MsgText[1]== 'م3' then
+    if not msg.Admin then return "📛*¦* هذا الامر يخص {الادمن,المدير,المنشئ,المطور} فقط  \n🚶" end
+    SUDO_USER = redis:hgetall(boss..'username:'..SUDO_ID).username
+    
+    local text = [[ ☑️ اهلا بك في قائمة الحماية
+    📨 للاستفسار - ]]..SUDO_USER..[[
+    
+    ﹎﹎﹎ اوامر القفل والفتح بالمسح ﹎﹎﹎
+    • قفل - فتح التعديل  
+    •️ قفل - فتح البصمات 
+    • قفل - فتح الفيديو 
+    • قفل - فتح الـصــور 
+    • قفل - فتح الملصقات 
+    • قفل - فتح المتحركه 
+    
+    • قفل - فتح الدردشه 
+    • قفل - فتح الروابط 
+    • قفل - فتح التاك 
+    • قفل - فتح البوتات 
+    • ️قفل - فتح المعرفات 
+    • قفل - فتح البوتات بالطرد 
+    
+    • قفل - فتح الكلايش 
+    •️ قفل - فتح التكرار 
+    • قفل - فتح التوجيه 
+    • قفل - فتح الانلاين 
+    • قفل - فتح الجهات 
+    • قفل - فتح الــكـــل 
+    
+    • قفل - فتح الفشار
+    • قفل - فتح الفارسيه
+    • قفل - فتح الانكليزيه
+    • قفل - فتح الاضافه
+    • قفل - فتح الصوت
+    • قفل - فتح الالعاب
+    • قفل - فتح الماركدوان
+    • قفل - فتح الويب
+    
+    ﹎﹎﹎﹎اوامر الفتح والقفل بالتقييد﹎﹎﹎
+    • قفل - فتح التوجيه بالتقييد 
+    • قفل - فتح الروابط بالتقييد 
+    • قفل - فتح المتحركه بالتقييد 
+    • قفل - فتح الصور بالتقييد 
+    • قفل - فتح الفيديو بالتقييد 
+    
+    ﹎﹎﹎﹎اوامر التفعيل والتعطيل ﹎﹎﹎﹎
+    • تفعيل - تعطيل الترحيب 
+    • تفعيل - تعطيل الردود 
+    • تفعيل - تعطيل التحذير 
+    • تفعيل - تعطيل الايدي
+    • تفعيل - تعطيل الرابط
+    • تفعيل - تعطيل المغادره
+    • تفعيل - تعطيل الحظر
+    • تفعيل - تعطيل الحمايه
+    • تفعيل - تعطيل تاك للكل
+    • تفعيل - تعطيل الايدي بالصوره
+    • تفعيل - تعطيل التحقق ]]
+          
+          
+    GetUserID(msg.sender_user_id_,function(arg,data)
+      msg = arg.msg
+      local textD = redis:get(boss..":awamer_Klesha_m3:")
+      if textD then
+        textD = Flter_Markdown(convert_Klmat(msg,data,textD,true))
+        else
+          textD = text
+        end
+          sendMsg(msg.chat_id_,msg.id_,textD)
+      end,{msg=msg})
+      return false
     end
+    
+    if MsgText[1]== "م المطور" then
+    if not msg.SudoBase then return "🔅¦ للمطور الاساسي فقط  🎖" end
+    SUDO_USER = redis:hgetall(boss..'username:'..SUDO_ID).username
+    
+    local text = [[ ☑️ اهلا بك في قائمة اوامر المطورين
+     📨 للاستفسار - ]]..SUDO_USER..[[
+    
+    • تفعيل
+    • تعطيل
+    • اسم بوتك + غادر
+    • مسح الادمنيه
+    • مسح المميزين
+    • مسح المدراء
+    • مسح المطورين
+     • مسح المنشئين
+     • مسح المنشئين الاساسيين
+    • مسح كلايش التعليمات
+    • اذاعه
+    • اذاعه خاص
+    • اذاعه عام
+    • اذاعه بالتثبيت
+    • اذاعه عام بالتوجيه
+    • تعيين قائمه الاوامر
+    • مسح كلايش التعليمات
+    • تعيين كليشه ستارت
+    • تعيين ايدي عام
+    • مسح ايدي عام
+    • تفعيل / تعطيل تعيين الايدي
+    • تحديث
+    • تحديث السورس ]]
+          
+    GetUserID(msg.sender_user_id_,function(arg,data)
+      msg = arg.msg
+      local textD = redis:get(boss..":awamer_Klesha_mtwr:")
+      if textD then
+        textD = Flter_Markdown(convert_Klmat(msg,data,textD,true))
+        else
+          textD = text
+        end
+          sendMsg(msg.chat_id_,msg.id_,textD)
+      end,{msg=msg})
+      return false
+    end
+    
+    if MsgText[1]== 'اوامر الرد' then
+    if not msg.Director then return "📛*¦* هذا الامر يخص {المطور,المنشئ,المدير} فقط  \n🚶" end
+    SUDO_USER = redis:hgetall(boss..'username:'..SUDO_ID).username
+    
+          
+    local text = [[ ☑️ اهلا بك في قائمة اوامر الردود
+     📨 للاستفسار - ]]..SUDO_USER..[[
+    
+    •  جميع اوامر الردود 
+    • الردود : لعرض الردود المثبته
+    •  اضف رد : لأضافه رد جديد
+    • مسح رد  الرد المراد مسحه
+    • مسح الردود : لمسح كل الردود
+    •  اضف رد عام : لاضافه رد لكل المجموعات
+    •  مسح رد عام : لمسح الرد العام 
+    • مسح الردود العامه : لمسح كل ردود العامه ]]
+          
+    GetUserID(msg.sender_user_id_,function(arg,data)
+      msg = arg.msg
+      local textD = redis:get(boss..":awamer_Klesha_mrd:")
+      if textD then
+        textD = Flter_Markdown(convert_Klmat(msg,data,textD,true))
+        else
+          textD = text
+        end
+          sendMsg(msg.chat_id_,msg.id_,textD)
+      end,{msg=msg})
+      return false
+    end
+    
+     if MsgText[1]== "اوامر الملفات" then
+    if not msg.SudoBase then return"📛*¦* هذا الامر يخص {المطور الاساسي} فقط  \n🚶" end
+    local text = [[ ☑️ اهلا بك في قائمة اوامر الملفات
+     📨 للاستفسار - ]]..SUDO_USER..[[
+    
+    • آوآمر آلملفآت
+    
+    •  `/files`  لعرض قائمه الملفات 
+    •  `/store`  لعرض متجر الملفات 
+    •  `sp file.lua`   تثبيت الملف 
+    •  `dp file.lua`  الملف المراد حذفه ]]
+          
+          
+    GetUserID(msg.sender_user_id_,function(arg,data)
+      msg = arg.msg
+      local textD = redis:get(boss..":awamer_Klesha_mf:")
+      if textD then
+      textD = Flter_Markdown(convert_Klmat(msg,data,textD,true))
+      else
+        textD = text
+      end
       sendMsg(msg.chat_id_,msg.id_,textD)
-  end,{msg=msg})
-  return false
-end
-
- if MsgText[1]== "اوامر الملفات" then
-if not msg.SudoBase then return"📛*¦* هذا الامر يخص {المطور الاساسي} فقط  \n🚶" end
-local text = [[ ☑️ اهلا بك في قائمة اوامر الملفات
- 📨 للاستفسار - ]]..SUDO_USER..[[
-
-• آوآمر آلملفآت
-
-•  `/files`  لعرض قائمه الملفات 
-•  `/store`  لعرض متجر الملفات 
-•  `sp file.lua`   تثبيت الملف 
-•  `dp file.lua`  الملف المراد حذفه ]]
-			
-			
-GetUserID(msg.sender_user_id_,function(arg,data)
-  msg = arg.msg
-  local textD = redis:get(boss..":awamer_Klesha_mf:")
-  if textD then
-  textD = Flter_Markdown(convert_Klmat(msg,data,textD,true))
-  else
-    textD = text
-  end
-  sendMsg(msg.chat_id_,msg.id_,textD)
-  end,{msg=msg})
-  return false
-end
+      end,{msg=msg})
+      return false
+    end
+    
 
 if MsgText[1] == "مغادره" or MsgText[1] == "ادفرني" or MsgText[1] == "احظرني" or MsgText[1] == "اطردني" then
 if msg.Admin then return "📛*¦* لا استطيع طرد المدراء والادمنيه والمنشئين  \n🚶" end
@@ -3726,7 +3672,7 @@ return "🔖| لا يوجد قناة مفعله ع الاشتراك الاجبا
 end
 end
 
-if MsgText[1] == "تغيير الاشتراك الاجباري" then
+if MsgText[1] == "تغي��ر الاشتراك الاجباري" then
 if not msg.SudoBase then return"📛*¦* هذا الامر يخص {المطور الاساسي} فقط  \n🚶" end
 redis:setex(boss..":ForceSub:"..msg.sender_user_id_,350,true)
 return "📑| مرحبا بـك في نظام الاشتراك الاجباري\n🔖| الان ارسل معرف قـنـاتـك"
@@ -5517,7 +5463,6 @@ end
 end 
 
 
-
 return {
 Boss = {
 "^(رفع القيود)$",
@@ -5789,7 +5734,6 @@ Boss = {
 "^(احظرني)$", 
 "^(اطردني)$", 
 "^(جهاتي)$", 
-"^(تعطيل الايدي بالصوره)$", 
 "^(ضع رابط)$", 
 "^(نقل ملكيه البوت 📇)$", 
 "^(نقل ملكيه البوت)$", 
@@ -5912,4 +5856,3 @@ Boss = {
  iBoss = iBoss,
  dBoss = dBoss,
  }
-
