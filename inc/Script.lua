@@ -2641,11 +2641,11 @@ redis:setex(boss..'welcom_ph:witting'..msg.sender_user_id_,300,true)
 return'📭¦ حسننا عزيزي 🍁\n🌄 ¦ الان قم بارسال الصوره للترحيب \n🛠' 
 end
 
-if MsgText[1] == "تعطيل" and MsgText[2] == "البوت خدمي" then 
+if MsgText[1] == "تعطيل البوت خدمي" then 
 return lock_service(msg) 
 end
 
-if MsgText[1] == "تفعيل" and MsgText[2] == "البوت خدمي" then 
+if MsgText[1] == "تفعيل البوت خدمي" then 
 return unlock_service(msg) 
 end
 
@@ -2790,12 +2790,12 @@ if not msg.SudoUser then return"📛*¦* هذا الامر يخص {المطور}
 return GetListGeneralBanned(msg) 
 end
 
-if MsgText[1] == "تعطيل" and (MsgText[2] == "التواصل" or MsgText[2]=="التواصل ✖️") then 
+if MsgText[1] == "تعطيل التواصل" or MsgText[1]=="تعطيل التواصل ✖️" then 
 if not msg.SudoBase then return"📛*¦* هذا الامر يخص {المطور الاساسي} فقط  \n🚶" end
 return lock_twasel(msg) 
 end
 
-if MsgText[1] == "تفعيل" and (MsgText[2] == "التواصل" or MsgText[2]=="التواصل 🔛") then 
+if MsgText[1] == "تفعيل التواصل" or MsgText[1]=="تفعيل التواصل 🔛" then 
 if not msg.SudoBase then return"📛*¦* هذا الامر يخص {المطور الاساسي} فقط  \n🚶" end
 return unlock_twasel(msg) 
 end
@@ -5852,6 +5852,12 @@ Boss = {
 "^(تفعيل الرابط)$",
 "^(تفعيل تاك للكل)$",
 "^(تفعيل التحقق)$",
+"^(تفعيل البوت خدمي)$",
+"^(تعطيل البوت خدمي)$",
+"^(تفعيل التواصل 🔛)$",
+"^(تفعيل التواصل)$",
+"^(تعطيل التواصل ✖️)$",
+"^(تعطيل التواصل)$",
  },
  iBoss = iBoss,
  dBoss = dBoss,
