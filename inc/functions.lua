@@ -923,6 +923,8 @@ function convert_Klmat(msg,data,Replay,MD)
   Replay = Replay:gsub("{الرسائل}",Emsgs)
   Replay = Replay:gsub("{التعديل}",edited)
   Replay = Replay:gsub("{النقاط}",points)
+  Replay = Replay:gsub("{البوت}",redis:get(boss..':NameBot:'))
+  Replay = Replay:gsub("{المطور}",SUDO_USER)
   else
     Replay =""
   end
