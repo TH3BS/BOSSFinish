@@ -2929,6 +2929,7 @@ boss..":Witting_changeamr:"..msg.chat_id_..msg.sender_user_id_,
 boss..":Witting_changeamr2:"..msg.chat_id_..msg.sender_user_id_,
 boss..":Witting_MoveBot:"..msg.chat_id_..msg.sender_user_id_,
 boss..":firstAmrOld:"..msg.chat_id_..msg.sender_user_id_,
+boss..':prod_pin:'..msg.chat_id_..msg.sender_user_id_,
 boss..'addrd_all:'..msg.chat_id_..msg.sender_user_id_)
 return '📬*¦* تم آلغآء آلآمـر بنجآح \n🌿'
 end  
