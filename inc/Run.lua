@@ -566,7 +566,7 @@ local msg = data.message_
 if msg.content_.text_ then
 if redis:get(boss..":propin"..msg.chat_id_) == msg.content_.text_ then
 redis:del(boss..":propin"..msg.chat_id_)
-tdcli_function ({ID = "PinChannelMessage",channel_id_ = msg.chat_id_:gsub('-100',''),message_id_ = msg.id_,disable_notification_ = 0},function(arg,d) vardump(d)end,nil)   
+tdcli_function ({ID = "PinChannelMessage",channel_id_ = msg.chat_id_:gsub('-100',''),message_id_ = msg.id_,disable_notification_ = 0},function(arg,d) end,nil)   
 end
 
 end
