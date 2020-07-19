@@ -1990,14 +1990,12 @@ return false
 end
 
 if MsgText[1] == "تفعيل الردود" 	then return unlock_replay(msg) end
-if MsgText[1] == "تفعيل الاذاعه" or MsgText[1] =="تفعيل الاذاعه 📇" 	then return unlock_brod(msg) end
 if MsgText[1] == "تفعيل الايدي" 	then return unlock_ID(msg) end
 if MsgText[1] == "تفعيل الترحيب" 	then return unlock_Welcome(msg) end
 if MsgText[1] == "تفعيل التحذير" 	then return unlock_waring(msg) end 
 if MsgText[1] == "تفعيل الايدي بالصوره" 	then return unlock_idphoto(msg) end 
 if MsgText[1] == "تفعيل الحمايه" 	then return unlock_AntiEdit(msg) end 
 if MsgText[1] == "تفعيل المغادره" 	then return unlock_leftgroup(msg) end 
-if MsgText[1] == "تفعيل تعيين الايدي" or MsgText[1] =="تفعيل تعيين الايدي ⌨️" 	then return unlock_idediit(msg) end 
 if MsgText[1] == "تفعيل الحظر" 	then return unlock_KickBan(msg) end 
 if MsgText[1] == "تفعيل الرابط" 	then return unlock_linkk(msg) end 
 if MsgText[1] == "تفعيل تاك للكل" 	then return unlock_takkl(msg) end 
@@ -2005,14 +2003,12 @@ if MsgText[1] == "تفعيل التحقق" 		then return unlock_check(msg) end
 
 
 if MsgText[1] == "تعطيل الردود" 	then return lock_replay(msg) end
-if MsgText[1] == "تعطيل الاذاعه"  or MsgText[1] =="تعطيل الاذاعه 🔌"	then return lock_brod(msg) end
 if MsgText[1] == "تعطيل الايدي" 	then return lock_ID(msg) end
 if MsgText[1] == "تعطيل الترحيب" 	then return lock_Welcome(msg) end
 if MsgText[1] == "تعطيل التحذير" 	then return lock_waring(msg) end
 if MsgText[1] == "تعطيل الايدي بالصوره" 	then return lock_idphoto(msg) end
 if MsgText[1] == "تعطيل الحمايه" 	then return lock_AntiEdit(msg) end
 if MsgText[1] == "تعطيل المغادره" 	then return lock_leftgroup(msg) end 
-if MsgText[1] == "تعطيل تعيين الايدي" or MsgText[1] =="تعطيل تعيين الايدي ⚔️" 	then return lock_idediit(msg) end 
 if MsgText[1] == "تعطيل الحظر" 	then return lock_KickBan(msg) end 
 if MsgText[1] == "تعطيل الرابط" 	then return lock_linkk(msg) end 
 if MsgText[1] == "تعطيل تاك للكل" 	then return lock_takkl(msg) end 
@@ -2050,6 +2046,11 @@ return set_admins(msg)
 end
 
 end -- end of insert group 
+if MsgText[1] == "تعطيل الاذاعه"  or MsgText[1] =="تعطيل الاذاعه 🔌"	then return lock_brod(msg) end
+if MsgText[1] == "تفعيل تعيين الايدي" or MsgText[1] =="تفعيل تعيين الايدي ⌨️" 	then return unlock_idediit(msg) end 
+if MsgText[1] == "تعطيل تعيين الايدي" or MsgText[1] =="تعطيل تعيين الايدي ⚔️" 	then return lock_idediit(msg) end 
+if MsgText[1] == "تفعيل الاذاعه" or MsgText[1] =="تفعيل الاذاعه 📇" 	then return unlock_brod(msg) end
+
 
 
 if MsgText[1] == 'مسح' and MsgText[2] == 'المطورين'  then
@@ -4345,7 +4346,7 @@ end
 local NumGroupsDel = 0
 for i = 1, #groups do 
 sendMsg(groups[i],0,Flter_Markdown(msg.text),function(arg,data)
-redis:setex(boss..":propin"..data.chat_id_,100,data.content_.text_)
+redis:setex(boss..":propin"..msg.chat_id_,100,data.content_.text_)
 end)
 end
 sendMsg(msg.chat_id_,msg.id_,'📑*¦* عدد المجموعات •⊱ { *'..#groups..'*  } ⊰•\n🗣*¦* تـم الاذاعه بالتثبيت بنجاح ✓')
