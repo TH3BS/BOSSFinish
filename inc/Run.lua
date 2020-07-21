@@ -66,9 +66,8 @@ user = {}
 user.username = SUDO_USER
 user.Source  = DirFol
 local url , res = https.request('https://api.th3boss.com/GetID/?Array='..JSON.encode(user))
-print('https://api.th3boss.com/GetID/?Array='..JSON.encode(user))
-if res ~= 200 then
 print(res)
+if res ~= 200 then
 print('\n\27[1;31m￤ Conect is Failed !\n￤ حدث خطـآ في آلآتصـآل بآلسـيرفر , يرجى مـرآسـلهہ‏‏ مـطـور آلسـورس ليتمـگن مـن حل آلمـشـگلهہ‏‏ في آسـرع وقت مـمـگن . !')
 os.exit()
 end
