@@ -4346,7 +4346,7 @@ end
 local NumGroupsDel = 0
 for i = 1, #groups do 
 sendMsg(groups[i],0,Flter_Markdown(msg.text),function(arg,data)
-redis:setex(boss..":propin"..msg.chat_id_,100,data.content_.text_)
+if data.chat_id_ then redis:setex(boss..":propin"..data.chat_id_,100,data.content_.text_) end
 end)
 end
 sendMsg(msg.chat_id_,msg.id_,'📑*¦* عدد المجموعات •⊱ { *'..#groups..'*  } ⊰•\n🗣*¦* تـم الاذاعه بالتثبيت بنجاح ✓')
