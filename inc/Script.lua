@@ -1351,7 +1351,7 @@ local NumLoop = tonumber(MsgText[2])
 if NumLoop < 1 or NumLoop > 50 then 
 return "📡*¦* حدود التكرار ,  يجب ان تكون ما بين  *[2-50]*" 
 end
-redis:set(boss..'flood'..msg.chat_id_,MsgText[2]) 
+redis:set(boss..'num_msg_max'..msg.chat_id_,MsgText[2]) 
 return "📡*¦* تم وضع التكرار » { *"..MsgText[2].."* }"
 end
 
